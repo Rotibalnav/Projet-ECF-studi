@@ -1,0 +1,437 @@
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #034b5ac8;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: darkcyan;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #343a40 !important;
+}
+nav {
+    position: fixed;
+}
+.navbar-expand-lg {
+    text-align: center;
+    color: darkcyan;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+.navbar {
+    color: darkcyan;
+    margin-top: 0px;
+}
+header {
+    background-color: #343a40;
+    margin-top: 65px;
+}
+h1 {
+    color: darkcyan;
+    font-size: 2.5em;
+    text-align: center;
+}
+.container-fluid .text-center {
+  padding-top: 10px;
+}
+main {
+    margin:50px;
+}
+h2 {
+    margin:5px;
+    color: white;
+}
+h3 {
+    color: white;
+    text-align: center;
+}
+h4 {
+    color: white
+}
+h5{
+       color:rgb(128, 198, 198);
+}
+h6 {
+    color:#cf7ea49d;
+}
+p{
+    color:white;
+}
+.form {
+    position: relative;
+    z-index: 100;
+    padding: 2rem;
+    border: 1px solid darkcyan;
+    border-radius: 15px;
+    width: 50%;
+    margin-top: 120px;
+    margin-left: 150px;
+
+}
+legend {
+    width: 95%;
+    text-align: center;
+    font-size: 5px;
+    color: rgb(214, 240, 230);
+}
+#gender {
+    display:flex;
+    width: 100%
+}
+.mb-3 {
+  width: 100%;
+  color:white;
+}
+/*form #contactForm {
+    backdrop-filter: blur(0px);
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px !important;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 0px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}*/
+.form-select {
+    border: none;
+    border-radius: none;
+    width: 95%;
+}
+#departure, #destination, #date {
+    color: white;
+    background-color: rgba(51, 143, 82, 0.41);
+    background-image: none;
+    
+}
+#date {
+    padding: 0%;
+}
+.fa-solid {
+    transform:translateY(-160%);
+    margin-left: 87%;
+    position: absolute;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-top: 10px;
+    padding:10px;
+    width: 30%;
+    border-radius: 15px;
+    border: 1px solid ;
+}
+select, #gender {
+    background-color: rgba(51, 143, 82, 0.41);
+}
+input, #email, #first-name, #full-name, #date-of-year, #username, #password, #confirm-password {
+    background-color: rgba(51, 143, 82, 0.41);
+    border:1px solid rgba(247, 249, 250, 0.47);
+    color: var(--bs-light);
+}
+.connexion {
+    border: solid 5px darkcyan;
+    border-radius: 15px;
+    padding: 15px;
+}
+.inscription{
+    border: solid 5px darkcyan;
+    border-radius: 15px;
+    padding: 15px;
+}
+.form-check-input:checked {
+    background-color: var(--bs-green);
+    border: white;
+}
+.btn-dark {
+    background-color: #198754;
+    border: #198754;
+}
+.form-check-label {
+    color: white;
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 35%;
+}
+.btn-success,#connexion a {
+    background-color: darkcyan;
+    border: none;
+}
+.btn-success,#inscription a {
+    background-color: darkcyan;
+    border: none;
+}
+.carousel-item img {
+    height: 800px;
+    object-fit: cover;
+}
+section {
+    text-align: center;
+    /*margin: 150px;*/
+}
+#voyage-entre-femmes {
+    margin:150px;
+}
+.card {
+    background-color: var(--bs-gray-dark) !important;
+    border: 1px solid darkcyan !important;
+}
+.card-header:first-child {
+    color: hotpink
+}
+#Mission {
+    text-align: center;
+    margin:150px;
+}
+#À_propos {
+    border: 0px solid black;
+    text-align: center;
+    border-radius: 40px;
+    margin: 150px;
+    background-image: url(./Asset/voiture\ borne\ éco\ verte.webp);
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    pointer-events: initial;
+    bottom: 100%;
+}
+#Contact {
+    text-align: center;
+    margin: 150px;
+}
+.sociaux {
+    padding: 50px;
+    justify-content: space-around;
+    font-size: 30px;
+    text-align: center;
+}
+.fa-linkedin{
+    color: rgb(0, 119, 181);
+}
+.fa-facebook{
+    color: rgb(59, 89, 152);
+}
+.fa-instagram{
+    color: rgb(198, 43, 226);
+}
+.fa-square-x-twitter{
+    color: rgb(0, 5, 8);
+}
+.fa-brands {
+    width: 140px;
+}
+.mentions-légales {
+    text-align: center;
+    margin-top: 80px;
+}
+/*
+@media screen and (max-width: 350px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left:0px;
+    width: 255px;
+    height: 400px;
+    padding-left: 10px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 60px;
+}
+}
+@media screen and (min-width: 351px) and (max-width: 575px) {
+    form {
+        position:relative;
+        z-index: 100;
+        top: 580px;
+        left: 100px;
+        width: 255px;
+        height: 400px;
+        padding-left: 10px;
+        border: solid 1px #ccc;
+        border-radius: 15px;
+        margin: 30px;
+        margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+    }
+    .btn-success {
+        margin-top: 20px;
+        justify-content: center;
+        margin-left: 60px;
+    }
+}
+@media (min-width: 576px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 70px;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+
+@media (min-width: 768px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 150px;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 992px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 1200px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 1400px) {
+form {
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 30px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+*/

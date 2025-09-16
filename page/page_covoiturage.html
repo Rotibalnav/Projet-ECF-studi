@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eco-Ride</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+   <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Eco-Ride</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Covoiturage</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="../index.html#voyage_entre_femmes">Voyage entre femmes</a>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  À propos
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                     <a class="dropdown-item" href="../index.html#Mission">Notre mission</a>
+                  </li>
+                  <li><a class="dropdown-item" href="../index.html#À_propos">Qui sommes-nous ?</a></li>
+                  <li>
+                     <a class="dropdown-item" href="../index.html#Contact">Nous contacter</a>
+                  </li>
+               </ul>
+            </li>
+            
+            <!--mettre items connexion a droite de la navbar-->
+            <div class="d-flex justify-content-center">
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                     data-bs-toggle="dropdown" aria-expanded="false">
+                     Connexion
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <li>
+                        <a class="dropdown-item" href="./connexion_inscription.html">Connexion/Inscription</a>
+                     </li>
+                     <li>
+                        <a class="dropdown-item" href="#Deconnexion">Deconnexion</a>
+                     </li>
+                  </ul>
+               </li>
+            </div>
+         </ul>
+      </div>
+   </div>
+</nav>
+    </header>
+    <main>
+        
+            <div class="section-title">
+                <h2>Covoiturage</h2>
+            </div>
+                 <div class="form">
+                            <div id="contactForm">
+                                <legend>Rechercher un trajet</legend>
+                                <div class="mb-3">
+                                    Date du trajet
+                                    <input type="date" class="form-select" id="date" name="date" placeholder="Date" required>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <div class="mb-3">
+                                   <label for="departure" class="form-label"></label>
+                        <select class="form-select" id="departure" placeholder="Ville de départ">
+                            <option selected disabled>Départ</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Lyon">Lyon</option>
+                            <option value="Marseille">Marseille</option>
+                            <option value="Toulouse">Toulouse</option>
+                            <option value="Nice">Nice</option>
+                            <option value="Bordeaux">Bordeaux</option>
+                            <option value="Strasbourg">Strasbourg</option>
+                            <option value="Lille">Lille</option>
+                            <option value="Nantes">Nantes</option>
+                            <option value="Montpellier">Montpellier</option>
+                        </select>
+                                 <i class="fa-solid fa-person-walking-luggage"></i>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="destination" class="form-label"></label>
+                        <select class="form-select" id="destination" placeholder="Ville d'arrivée">
+                            <option selected disabled>Destination</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Lyon">Lyon</option>
+                            <option value="Marseille">Marseille</option>
+                            <option value="Toulouse">Toulouse</option>
+                            <option value="Nice">Nice</option>
+                            <option value="Bordeaux">Bordeaux</option>
+                            <option value="Strasbourg">Strasbourg</option>
+                            <option value="Lille">Lille</option>
+                            <option value="Nantes">Nantes</option>
+                            <option value="Montpellier">Montpellier</option>
+                        </select>
+                               <i class="fa-solid fa-flag-checkered"></i>
+                  </div>
+                  
+                  <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Voyage entre femmes *</label>
+                     </div> 
+                                <div id="formFeedback" class="mb-3"></div>
+                                <button type="submit" class="btn btn-success">C'est parti</button>
+                            </div>
+                 </div>
+        
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
