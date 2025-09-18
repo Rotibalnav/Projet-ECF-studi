@@ -175,12 +175,14 @@ input, #email, #first-name, #full-name, #date-of-year, #username, #password, #co
     background-color: var(--bs-green);
     border: white;
 }
-.btn-dark {
-    background-color: #198754;
-    border: #198754;
-}
+
 .form-check-label {
     color: white;
+}
+button,.btn.btn-dark {
+    color: white;
+    background-color: darkcyan;
+    border: none;
 }
 .btn-success {
     margin-top: 20px;
@@ -201,10 +203,10 @@ input, #email, #first-name, #full-name, #date-of-year, #username, #password, #co
 }
 section {
     text-align: center;
-    /*margin: 150px;*/
+    padding:5%;
 }
 #voyage-entre-femmes {
-    margin:150px;
+    margin-top: 30px;
 }
 .card {
     background-color: var(--bs-gray-dark) !important;
@@ -215,13 +217,18 @@ section {
 }
 #Mission {
     text-align: center;
-    margin:150px;
+    margin-top: 0px;
+}
+.card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #À_propos {
     border: 0px solid black;
     text-align: center;
     border-radius: 40px;
-    margin: 150px;
+    margin: 0px;
     background-image: url(./Asset/voiture\ borne\ éco\ verte.webp);
 }
 footer {
