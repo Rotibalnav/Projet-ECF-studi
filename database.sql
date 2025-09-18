@@ -2,16 +2,16 @@ CREATE DATABASE Ecoride;
 
 USE Ecoride;
 
+--CREATION DE LA TABLE UTILISATEURS
 CREATE TABLE Utilisateurs (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     sexe CHAR(1) NOT NULL,
     nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(50) NOT NULL,
+    prénom VARCHAR(50) NOT NULL,
     age INT NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     telephone VARCHAR(15) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
-    date_inscription DATETIME DEFAULT CURRENT_TIMESTAMP,
     vehicule ENUM('voiture') NOT NULL,
     marque VARCHAR(50) NOT NULL,
     modele VARCHAR(50) NOT NULL,
@@ -20,19 +20,19 @@ CREATE TABLE Utilisateurs (
         'thermique',
         'hybride',
         'electrique'
-    ) NOT NULL matriculation VARCHAR(20) NOT NULL UNIQUE,
+    ) NOT NULL,
+    matriculation VARCHAR(20) NOT NULL UNIQUE
 );
 
 INSERT INTO
-    Utilisateurs (
+    utilisateurs (
         sexe,
         nom,
-        prenom,
+        prénom,
         age,
         email,
         telephone,
         mot_de_passe,
-        date_inscription,
         vehicule,
         marque,
         modele,
@@ -42,29 +42,12 @@ INSERT INTO
     )
 VALUES (
         'M',
-        'Doe',
-        'John',
-        22,
-        'john.doe@example.com',
-        '0123456789',
-        'password123',
-        '12-05-2024 09:24:00',
-        'voiture',
-        'Toyota',
-        'Corolla',
-        2020,
-        'thermique',
-        'ABC123'
-    ),
-    (
-        'M',
         'Johnson',
         'Alex',
         21,
         'alex.johnson@example.com',
         '0123456789',
         'password234',
-        '15-05-2024 09:30:00',
         'voiture',
         'Ford',
         'Fiesta',
@@ -78,9 +61,8 @@ VALUES (
         'Jane',
         24,
         'jane.smith@example.com',
-        '0123456789',
+        '0173456789',
         'password456',
-        '14-01-2024 10:00:00',
         'voiture',
         'Honda',
         'Civic',
@@ -94,9 +76,8 @@ VALUES (
         'Mike',
         23,
         'mike.brown@example.com',
-        '0123456789',
+        '022456789',
         'password789',
-        '11-08-2024 10:00:00',
         'voiture',
         'Ford',
         'Focus',
@@ -110,9 +91,8 @@ VALUES (
         'Emily',
         25,
         'emily.davis@example.com',
-        '0123456789',
+        '0323456789',
         'password101',
-        '04-02-2024 10:00:00',
         'voiture',
         'Chevrolet',
         'Malibu',
@@ -126,9 +106,8 @@ VALUES (
         'Chris',
         26,
         'chris.wilson@example.com',
-        '0123456789',
+        '0423456789',
         'password202',
-        '02-06-2024 10:00:00',
         'voiture',
         'Nissan',
         'Altima',
@@ -142,9 +121,8 @@ VALUES (
         'Jessica',
         27,
         'jessica.taylor@example.com',
-        '0123456789',
+        '0523456789',
         'password303',
-        '06-08-2024 10:00:00',
         'voiture',
         'Hyundai',
         'Elantra',
@@ -158,9 +136,8 @@ VALUES (
         'David',
         28,
         'david.garcia@example.com',
-        '0123456789',
+        '0623456789',
         'password404',
-        '07-07-2024 10:00:00',
         'voiture',
         'Kia',
         'Optima',
@@ -174,9 +151,8 @@ VALUES (
         'Sophia',
         29,
         'sophia.martinez@example.com',
-        '0123456789',
+        '0123456779',
         'password505',
-        '30-04-2024 10:00:00',
         'voiture',
         'Mazda',
         'CX-5',
@@ -190,9 +166,8 @@ VALUES (
         'James',
         30,
         'james.hernandez@example.com',
-        '0123456789',
+        '0123458789',
         'password606',
-        '25-03-2024 10:00:00',
         'voiture',
         'Subaru',
         'Outback',
@@ -206,9 +181,8 @@ VALUES (
         'Isabella',
         31,
         'isabella.lopez@example.com',
-        '0123456789',
+        '0123459789',
         'password707',
-        '20-02-2024 10:00:00',
         'voiture',
         'Volkswagen',
         'Golf',
@@ -222,9 +196,8 @@ VALUES (
         'Daniel',
         32,
         'daniel.gonzalez@example.com',
-        '0123456789',
+        '0123456189',
         'password808',
-        '18-01-2024 10:00:00',
         'voiture',
         'Chevrolet',
         'Malibu',
@@ -238,9 +211,8 @@ VALUES (
         'Mia',
         33,
         'mia.perez@example.com',
-        '0123456789',
+        '0123116789',
         'password909',
-        '22-03-2024 10:00:00',
         'voiture',
         'Toyota',
         'Camry',
@@ -254,9 +226,8 @@ VALUES (
         'Ethan',
         34,
         'ethan.sanchez@example.com',
-        '0123456789',
+        '0121256789',
         'password010',
-        '10-01-2024 10:00:00',
         'voiture',
         'Honda',
         'Accord',
@@ -270,9 +241,8 @@ VALUES (
         'Stella',
         22,
         'stella.skander@example.com',
-        '0123456789',
+        '0121356789',
         'password111',
-        '05-05-2024 10:00:00',
         'voiture',
         'Nissan',
         'Sentra',
@@ -286,9 +256,8 @@ VALUES (
         'Liam',
         23,
         'liam.nguyen@example.com',
-        '0123456789',
+        '0114456789',
         'password222',
-        '12-12-2024 10:00:00',
         'voiture',
         'Toyota',
         'Camry',
@@ -302,9 +271,8 @@ VALUES (
         'Fabienne',
         24,
         'fabienne.king@example.com',
-        '0123456789',
+        '0123451589',
         'password333',
-        '15-11-2024 10:00:00',
         'voiture',
         'Peugeot',
         '308',
@@ -318,9 +286,8 @@ VALUES (
         'Noah',
         25,
         'noah.wright@example.com',
-        '0123456789',
+        '0123166789',
         'password444',
-        '20-10-2024 10:00:00',
         'voiture',
         'Tesla',
         'Model 3',
@@ -334,9 +301,8 @@ VALUES (
         'Chloe',
         26,
         'chloe.lopez@example.com',
-        '0123456789',
+        '0123176789',
         'password555',
-        '25-09-2024 10:00:00',
         'voiture',
         'BMW',
         'X3',
@@ -350,9 +316,8 @@ VALUES (
         'Mason',
         27,
         'mason.hill@example.com',
-        '0123456789',
+        '0123418789',
         'password666',
-        '30-08-2024 10:00:00',
         'voiture',
         'Audi',
         'A4',
@@ -365,12 +330,11 @@ INSERT INTO
     Utilisateurs (
         sexe,
         nom,
-        prenom,
+        prénom,
         age,
         email,
         telephone,
         mot_de_passe,
-        date_inscription,
         vehicule,
         marque,
         modele,
@@ -384,8 +348,8 @@ VALUES (
         'Joshua',
         22,
         'joshua.lourmel@example.com',
+        '0145456789',
         'password123',
-        '12-05-2024 09:24:00',
         'voiture',
         'Mercedes',
         'Classe GLE',
@@ -396,21 +360,33 @@ VALUES (
 
 SELECT * FROM Utilisateurs;
 
-SELECT Nom, Prénom, email FROM Utilisateurs;
+SELECT nom, prénom, email FROM Utilisateurs;
 
 SELECT * FROM Utilisateurs WHERE age > 21;
 
-SELECT Nom, Prénom, email, vehicule
+SELECT
+    nom,
+    prénom,
+    email,
+    energie_vehicule
 FROM Utilisateurs
 WHERE
     energie_vehicule = 'electrique';
 
-SELECT Nom, Prénom, email, vehicule
+SELECT
+    nom,
+    prénom,
+    email,
+    energie_vehicule
 FROM Utilisateurs
 WHERE
     energie_vehicule = 'thermique';
 
-SELECT Nom, Prénom, email, vehicule
+SELECT
+    nom,
+    prénom,
+    email,
+    energie_vehicule
 FROM Utilisateurs
 WHERE
     energie_vehicule = 'hybride';
