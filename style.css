@@ -69,6 +69,7 @@ h2 {
 h3 {
     color: white;
     text-align: center;
+    justify-content: center;
 }
 h4 {
     color: white
@@ -224,13 +225,12 @@ section {
     justify-content: center;
     align-items: center;
 }
-#À_propos {
-    border: 0px solid black;
+/*#À_propos {
     text-align: center;
-    border-radius: 40px;
-    margin: 90px;
-    background-image: url(./Asset/voiture\ borne\ éco.jpeg);
 }
+#À_propos p {
+    margin-bottom: 3rem;
+}*/
 footer {
     text-align: center;
     padding: 10px;
@@ -267,9 +267,9 @@ footer {
     text-align: center;
     margin-top: 80px;
 }
-/*
+
 @media screen and (max-width: 350px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -290,7 +290,7 @@ form {
 }
 }
 @media screen and (min-width: 351px) and (max-width: 575px) {
-    form {
+    div #searchcarpool {
         position:relative;
         z-index: 100;
         top: 580px;
@@ -311,7 +311,7 @@ form {
     }
 }
 @media (min-width: 576px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -338,7 +338,7 @@ form {
 }
 
 @media (min-width: 768px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -364,7 +364,7 @@ form {
 }
 }
 @media (min-width: 992px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -390,7 +390,7 @@ form {
 }
 }
 @media (min-width: 1200px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -416,7 +416,7 @@ form {
 }
 }
 @media (min-width: 1400px) {
-form {
+div #searchcarpool {
     position:relative;
     z-index: 100;
     top: 580px;
@@ -441,4 +441,3 @@ form {
     margin-left: 125px;
 }
 }
-*/
