@@ -239,8 +239,9 @@ footer {
     bottom: 100%;
 }
 #Contact {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin: 150px;
 }
 .sociaux {
     padding: 50px;
