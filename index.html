@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,65 +11,203 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
    <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
    <header>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-   <div class="container-fluid">
-      <a class="navbar-brand" href="#">Eco-Ride</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-         <ul class="navbar-nav">
-            <li class="nav-item">
-               <a class="nav-link" href="./page/page_covoiturage.html">Covoiturage</a>
-            </li>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  À propos
-               </a>
-               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li>
-                     <a class="dropdown-item" href="#Mission">Notre mission</a>
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">Eco-Ride</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="./page/page_covoiturage.html">Covoiturage</a>
                   </li>
-                  <li>
-                     <a class="dropdown-item" href="#Présentation">Qui sommes-nous ?</a>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        À propos
+                     </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                           <a class="dropdown-item" href="#Mission">Notre mission</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#Présentation">Qui sommes-nous ?</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#Contact">Nous contacter</a>
+                        </li>
+                     </ul>
                   </li>
-                  <li>
-                     <a class="dropdown-item" href="#Contact">Nous contacter</a>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#voyage_entre_femmes">Voyage entre femmes</a>
                   </li>
+                  <!--mettre items connexion a droite de la navbar-->
+                  <div class="d-flex justify-content-center">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                           Connexion
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                           <li>
+                              <a class="dropdown-item"
+                                 href="./page/connexion_inscription.html ">Connexion/Inscription</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#Deconnexion">Déconnexion</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </div>
                </ul>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#voyage_entre_femmes">Voyage entre femmes</a>
-            </li>
-            <!--mettre items connexion a droite de la navbar-->
-            <div class="d-flex justify-content-center">
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                     data-bs-toggle="dropdown" aria-expanded="false">
-                     Connexion
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                     <li>
-                        <a class="dropdown-item" href="./page/connexion_inscription.html ">Connexion/Inscription</a>
-                     </li>
-                     <li>
-                        <a class="dropdown-item" href="#Deconnexion">Déconnexion</a>
-                     </li>
-                  </ul>
-               </li>
             </div>
-         </ul>
-      </div>
-   </div>
-</nav>
+         </div>
+      </nav>
       <div class="container-fluid text-center">
          <div id="title" class="section-title">
             <h1>Bienvenue chez Eco-Ride</h1>
          </div>
+      </div>
+           <div id="searchcarpool">
+         <legend>Rechercher un trajet</legend>
+         <div class="mb-3">
+            Date du trajet
+            <input type="date" class="form-select" id="date" name="date" placeholder="Date" required>
+            <i class="fa-solid fa-calendar-days"></i>
+         </div>
+         <div class="mb-3">
+            <label for="departure" class="form-label"></label>
+            <select class="form-select" id="departure" placeholder="Ville de départ">
+               <option selected disabled>Départ</option>
+               <option value="Paris">Paris</option>
+               <option value="Lyon">Lyon</option>
+               <option value="Marseille">Marseille</option>
+               <option value="Toulouse">Toulouse</option>
+               <option value="Nice">Nice</option>
+               <option value="Bordeaux">Bordeaux</option>
+               <option value="Strasbourg">Strasbourg</option>
+               <option value="Lille">Lille</option>
+               <option value="Nantes">Nantes</option>
+               <option value="Montpellier">Montpellier</option>
+               <option value="Rennes">Rennes</option>
+               <option value="Reims">Reims</option>
+               <option value="Le Havre">Le Havre</option>
+               <option value="Saint-Étienne">Saint-Étienne</option>
+               <option value="Toulon">Toulon</option>
+               <option value="Clermont-Ferrand">Clermont-Ferrand</option>
+               <option value="Aix-en-Provence">Aix-en-Provence</option>
+               <option value="Brest">Brest</option>
+               <option value="Limoges">Limoges</option>
+               <option value="Dijon">Dijon</option>
+               <option value="Angers">Angers</option>
+               <option value="Villeurbanne">Villeurbanne</option>
+               <option value="Le Mans">Le Mans</option>
+               <option value="Amiens">Amiens</option>
+               <option value="Vannes">Vannes</option>
+               <option value="La Rochelle">La Rochelle</option>
+               <option value="Perpignan">Perpignan</option>
+               <option value="Calais">Calais</option>
+               <option value="Nancy">Nancy</option>
+               <option value="Metz">Metz</option>
+               <option value="Orléans">Orléans</option>
+               <option value="Mulhouse">Mulhouse</option>
+               <option value="Rouen">Rouen</option>
+               <option value="Caen">Caen</option>
+               <option value="Tours">Tours</option>
+               <option value="Lorient">Lorient</option>
+               <option value="Avignon">Avignon</option>
+               <option value="Poitiers">Poitiers</option>
+               <option value="Nîmes">Nîmes</option>
+               <option value="Annecy">Annecy</option>
+               <option value="Deauville">Deauville</option>
+               <option value="Chambéry">Chambéry</option>
+               <option value="Valence">Valence</option>
+               <option value="Béziers">Béziers</option>
+               <option value="Cabourg">Cabourg</option>
+               <option value="Saint-Malo">Saint-Malo</option>
+               <option value="Biarritz">Biarritz</option>
+               <option value="Roubaix">Roubaix</option>
+               <option value="Colmar">Colmar</option>
+               <option value="Cherbourg">Cherbourg</option>
+               <option value="Carcassonne">Carcassonne</option>
+               <option value="Mâcon">Mâcon</option>
+               <option value="Pau">Pau</option>
+               <option value="Calais">Calais</option>
+            </select>
+            <i class="fa-solid fa-person-walking-luggage"></i>
+         </div>
+         <div class="mb-3">
+            <label for="destination" class="form-label"></label>
+            <select class="form-select" id="destination" placeholder="Ville d'arrivée">
+               <option selected disabled>Destination</option>
+               <option value="Paris">Paris</option>
+               <option value="Lyon">Lyon</option>
+               <option value="Marseille">Marseille</option>
+               <option value="Toulouse">Toulouse</option>
+               <option value="Nice">Nice</option>
+               <option value="Bordeaux">Bordeaux</option>
+               <option value="Strasbourg">Strasbourg</option>
+               <option value="Lille">Lille</option>
+               <option value="Nantes">Nantes</option>
+               <option value="Montpellier">Montpellier</option>
+               <option value="Rennes">Rennes</option>
+               <option value="Reims">Reims</option>
+               <option value="Le Havre">Le Havre</option>
+               <option value="Saint-Étienne">Saint-Étienne</option>
+               <option value="Toulon">Toulon</option>
+               <option value="Clermont-Ferrand">Clermont-Ferrand</option>
+               <option value="Aix-en-Provence">Aix-en-Provence</option>
+               <option value="Brest">Brest</option>
+               <option value="Limoges">Limoges</option>
+               <option value="Dijon">Dijon</option>
+               <option value="Angers">Angers</option>
+               <option value="Villeurbanne">Villeurbanne</option>
+               <option value="Le Mans">Le Mans</option>
+               <option value="Amiens">Amiens</option>
+               <option value="Vannes">Vannes</option>
+               <option value="La Rochelle">La Rochelle</option>
+               <option value="Perpignan">Perpignan</option>
+               <option value="Calais">Calais</option>
+               <option value="Nancy">Nancy</option>
+               <option value="Metz">Metz</option>
+               <option value="Orléans">Orléans</option>
+               <option value="Mulhouse">Mulhouse</option>
+               <option value="Rouen">Rouen</option>
+               <option value="Caen">Caen</option>
+               <option value="Tours">Tours</option>
+               <option value="Lorient">Lorient</option>
+               <option value="Avignon">Avignon</option>
+               <option value="Poitiers">Poitiers</option>
+               <option value="Nîmes">Nîmes</option>
+               <option value="Annecy">Annecy</option>
+               <option value="Deauville">Deauville</option>
+               <option value="Chambéry">Chambéry</option>
+               <option value="Valence">Valence</option>
+               <option value="Béziers">Béziers</option>
+               <option value="Cabourg">Cabourg</option>
+               <option value="Saint-Malo">Saint-Malo</option>
+               <option value="Biarritz">Biarritz</option>
+               <option value="Roubaix">Roubaix</option>
+               <option value="Colmar">Colmar</option>
+               <option value="Cherbourg">Cherbourg</option>
+               <option value="Carcassonne">Carcassonne</option>
+               <option value="Mâcon">Mâcon</option>
+               <option value="Pau">Pau</option>
+               <option value="Calais">Calais</option>
+            </select>
+            <i class="fa-solid fa-flag-checkered"></i>
+         </div>
+         <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Voyage entre femmes *</label>
+         </div>
+         <div id="formFeedback" class="mb-3"></div>
+         <button type="submit" class="btn btn-success">C'est parti</button>
       </div>
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-indicators">
@@ -154,8 +293,7 @@
                <div class="carousel-caption d-none d-md-block">
                   <h5>Voyage entre femmes</h5>
                   <p>
-                     Un espace sécurisé et convivial pour toutes les conductrices et
-                     passagères.
+                     Un espace sécurisé et convivial pour toutes les conductrices et passagères.
                   </p>
                </div>
             </div>
@@ -163,7 +301,8 @@
                <img src="./Asset/futur écologique.webp" class="d-block w-100" alt="..." />
                <div class="carousel-caption d-none d-md-block">
                   <h5>Notre mission</h5>
-                  <p>Faire en sorte que chaque trajet soit une expérience agréable et respectueuse de l'environnement.</p>
+                  <p>Faire en sorte que chaque trajet soit une expérience agréable et respectueuse de l'environnement.
+                  </p>
                </div>
             </div>
             <div class="carousel-item">
@@ -217,8 +356,7 @@
             <div class="card-body">
                <h5 class="card-title">Voyage entre femmes</h5>
                <p class="card-text">
-                  <h6>Rejoignez Eco-Ride "Voyage entre femmes" où chaque femme peut voyager
-                  en toute confiance</h6>
+               <h6>Rejoignez Eco-Ride "Voyage entre femmes" où chaque femme peut voyager en toute confiance</h6>
                </p>
                <a href="./page/page_covoiturage.html" class="btn btn-secondary">Allons-y</a>
             </div>
@@ -227,43 +365,16 @@
       </section>
       <section id="Présentation">
          <div class="card bg-dark text-white">
-  <img src="./Asset/voiture borne éco.jpeg" class="card-img" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Qui sommes-nous ?</h5>
-    <p class="card-text">La startup "EcoRide" fraichement crée en France, a pour objectif de
-               réduire l'impact environnemental des déplacements en encourageant le
-               covoiturage. EcoRide prône une approche écologique.
-            </p>
-             <a href="./page/Qui_sommes_nous.html" class="btn btn-primary">lire la suite</a>
-  </div>
-</div>
-
-         <!--<div class="section-title">
-            <h4>Qui sommes-nous ?</h4>
-            <p>
-               La startup "EcoRide" fraichement crée en France, a pour objectif de
-               réduire l'impact environnemental des déplacements en encourageant le
-               covoiturage. EcoRide prône une approche écologique.
-            </p>
-            <p>
-               La plateforme EcoRide permet aux utilisateurs de proposer ou de
-               rechercher des trajets en covoiturage, facilitant ainsi la mise en
-               relation entre conducteurs et passagers. Les utilisateurs peuvent
-               créer un compte, publier leurs trajets, et rechercher des trajets
-               disponibles en fonction de leur point de départ et de leur
-               destination.
-            </p>
-            <p>
-               L’ambition d'EcoRide est de devenir la principale plateforme de
-               covoiturage pour les voyageurs soucieux de l'environnement et ceux
-               qui recherchent une solution économique pour leurs déplacements.
-               Eco-Ride se concentre uniquement sur les déplacements en voitures.
-            </p>
-            <p>
-               Eco-Ride s'engage à fournir des options de transport durables pour
-               une planète plus propre.
-            </p>
-         </div>-->
+            <img src="./Asset/voiture borne éco.jpeg" class="card-img" alt="...">
+            <div class="card-body">
+               <h5 class="card-title">Qui sommes-nous ?</h5>
+               <p class="card-text">La startup "EcoRide" fraichement crée en France, a pour objectif de
+                  réduire l'impact environnemental des déplacements en encourageant le
+                  covoiturage. EcoRide prône une approche écologique.
+               </p>
+               <a href="./page/Qui_sommes_nous.html" class="btn btn-primary">lire la suite</a>
+            </div>
+         </div>
       </section>
    </main>
    <footer>
@@ -284,8 +395,7 @@
       </div>
       <div class="mentions-legales">
          <p class="text-center">
-            <a href="./page/mentions%20légales.html">Mentions légales | Politique de confidentialité | Conditions
-               d'utilisation</a>
+            <a href="./page/mentions%20légales.html">Mentions légales | Politique de confidentialité | Conditions d'utilisation</a>
          </p>
          <p class="text-center">© 2025 Eco-Ride. Tous droits réservés.</p>
       </div>
@@ -295,4 +405,5 @@
       crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
