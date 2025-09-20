@@ -185,10 +185,12 @@ button,.btn.btn-dark {
     background-color: darkcyan;
     border: none;
 }
-.btn-success {
-    margin-top: 20px;
+.btn.btn-success {
+    display: flex;
+    background-color: darkcyan !important;
     justify-content: center;
-    margin-left: 35%;
+    align-items: center;
+    text-align: center;
 }
 .btn-success,#connexion a {
     background-color: darkcyan;
@@ -201,6 +203,16 @@ button,.btn.btn-dark {
 .carousel-item img {
     height: 800px;
     object-fit: cover;
+}
+#searchcarpool {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid darkcyan;
+    border-radius: 15px;
+    padding: 30px;
+
 }
 section {
     text-align: center;
@@ -219,12 +231,14 @@ section {
 #Mission {
     text-align: center;
     margin-top: 0px;
+    font-size: 55%;
 }
 .card-text {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /*#À_propos {
     text-align: center;
 }
@@ -269,7 +283,7 @@ footer {
     margin-top: 80px;
 }
 
-@media screen and (max-width: 350px) {
+/*@media screen and (max-width: 350px) {
 div #searchcarpool {
     position:relative;
     z-index: 100;
