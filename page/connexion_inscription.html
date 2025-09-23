@@ -12,7 +12,10 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Eco-Ride</a>
+      <a class="navbar-brand" href="../index.html">
+         <img src="../Asset/logo voiture_.png" alt="Logo Eco-Ride" width="40" height="40"
+            class="d-inline-block align-text-top" />
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -76,7 +79,7 @@
            <div class="collapse multi-collapse" id="multiCollapseExample2">
             <h3></h3>
             <div class="connexion">
-               <div id="contactForm">
+               <div id="connexionForm">
                   <div class="mb-3">
                      <label for="email" class="form-label">Email</label>
                      <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
@@ -113,31 +116,31 @@
                   </div>
                   <div class="mb-3">
                      <label for="email" class="form-label">Email</label>
-                     <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+                     <input type="email" class="form-control" placeholder="Email" id="email" required>
                   </div>
                 <div class="mb-3">
-                  <label for="first-name" class="form-label">Prénom</label>
-                <input type="text" class="form-control" placeholder="prénom" id="first-name" name="first-name">
+                  <label for="firstname" class="form-label">Prénom</label>
+                <input type="text" class="form-control" placeholder="prénom" id="firstname" required>
                 </div>
                 <div class="mb-3">
-                <label for="full-name" class="form-label">Nom complet</label>
-                <input type="text" class="form-control" placeholder="Nom complet" id="full-name" name="full-name" required>
+                <label for="name" class="form-label">Nom complet</label>
+                <input type="text" class="form-control" placeholder="Nom" id="name" required>
                 </div>
                 <div class="mb-3">
-                  <label for="date-of-year" class="form-label">Date de naissance</label>
-                <input type="date" class="form-control" placeholder="Date de naissance" id="date-of-year" name="date-of-year" required>
+                  <label for="dateofyear" class="form-label">Date de naissance</label>
+                <input type="date" class="form-control" placeholder="Date de naissance" id="dateofyear"  required>
                 </div>
                 <div class="mb-3">
                 <label for="username" class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control" placeholder="Nom d'utilisateur" id="username" name="username" required>
+                <input type="text" class="form-control" placeholder="Nom d'utilisateur" id="username" required>
                 </div>
                 <div class="mb-3">
                 <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="password">
+                <input type="password" class="form-control" placeholder="Mot de passe" id="password" required>
                 </div>
                 <div class="mb-3">
                 <label for="confirm-password" class="form-label">Confirmer le mot de passe</label>
-                <input type="password" class="form-control" placeholder="Confirmer le mot de passe" id="confirm-password" name="confirm-password">
+                <input type="password" class="form-control" placeholder="Confirmer le mot de passe" id="confirmpassword" required>
                 </div>
                 <div id="formFeedback" class="mb-3">
                 <button type="submit" class="btn btn-dark">S'inscrire</button>
@@ -152,7 +155,7 @@
     <footer>
         <p>&copy; 2025 Ecoride. Tous droits réservés.</p>
     </footer>
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>

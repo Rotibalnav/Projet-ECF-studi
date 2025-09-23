@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
        //Récupérer les valeurs des champs du formulaire et les nettoyer
        const emailInput = document.getElementById('email');
        const genderInput = document.getElementById('gender');
-       const firstNameInput = document.getElementById('first-name');
-       const fullNameInput = document.getElementById('full-name');
-       const dateofBirthInput = document.getElementById('date-of-birth');
+       const firstnameInput = document.getElementById('firstname');
+       const nameInput = document.getElementById('name');
+       const dateOfYearInput = document.getElementById('dateofyear');
        const userNameInput = document.getElementById('username');
        const passwordInput = document.getElementById('password');
-       const confirmPasswordInput = document.getElementById('confirm-password');
+       const confirmPasswordInput = document.getElementById('confirmpassword');
      
 
        //Récupération sécuriséé des valeurs
        const email = emailInput.value.trim();
        const gender = genderInput.value.trim();
-       const firstName = firstNameInput.value.trim();
-       const fullName = fullNameInput.value.trim();
-       const dateOfBirth = dateofBirthInput.value.trim();
+       const firstName = firstnameInput.value.trim();
+       const name = nameInput.value.trim();
+       const dateOfYear = dateOfYearInput.value.trim();
        const userName = userNameInput.value.trim();
        const password = passwordInput.value.trim();
        const confirmPassword = confirmPasswordInput.value.trim();
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
        //Valider les données
-       if (!validateForm(email, firstName, fullName, dateOfBirth, userName, password, confirmPassword)) {
+       if (!validateForm(email, firstname, name, dateofyear, username, password, confirmpassword)) {
            return false;
        }
 
@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
        const formData = {
            email: escapeHTML(email),
            gender: escapeHTML(gender),
-           firstName: escapeHTML(firstName),
-           fullName: escapeHTML(fullName),
-           dateOfBirth: escapeHTML(dateOfBirth),
-           userName: escapeHTML(userName),
+           firstname: escapeHTML(firstName),
+           name: escapeHTML(name),
+           dateofyear: escapeHTML(dateOfYear),
+           username: escapeHTML(userName),
            password: escapeHTML(password),
-           confirmPassword: escapeHTML(confirmPassword),
+           confirmpassword: escapeHTML(confirmpassword),
            timestamp: new Date().toISOString()
        };
        //Nous créons un object JavaScript qui contient toutes les données du formulaire
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 
       //Fonction de la validation des données
-         function validateForm(email, firstName, fullName, dateOfBirth, userName, password, confirmPassword){
+         function validateForm(email, firstname, name, dateofyear, username, password, confirmpassword){
          //Cette fonction vérifie que chaque champs respectent certaines règles
          //Si un champ ne respecte pas les règles, on ajoute un message d'erreur
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
          //Validation du prénom
-         if(firstName === '') {
+         if(firstname === '') {
             errors.push('Le prénom est requis!!!');
             isValid = false;
          }
@@ -131,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
          }
          //Validation de la date de naissance
-         if(dateOfBirth === '') {
+         if(dateofYear === '') {
             errors.push('La date de naissance est requise!!!');
             isValid = false;
          }
          //Validation du nom d'utilisateur
-         if(userName === '') {
+         if(username === '') {
             errors.push('Le nom d\'utilisateur est requis!!!');
             isValid = false;
          }
