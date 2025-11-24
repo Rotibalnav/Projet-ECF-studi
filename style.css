@@ -150,7 +150,7 @@ button, input, optgroup, select, textarea {
     line-height: inherit;
     margin-top: 10px;
     padding:10px;
-    width: 30%;
+    width: 70%;
     border-radius: 15px;
     border: 1px solid ;
 }
@@ -455,4 +455,90 @@ div #searchcarpool {
     justify-content: center;
     margin-left: 125px;
 }
+}
+*/
+html {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: darkcyan;
+}
+form {
+    margin: 3% 15%;
+}
+div, textarea, button {
+    margin: 1% 0%;
+}
+fieldset {
+    padding: 2%;
+    border: 2px darkcyan solid;
+    border-radius: 5px;
+}
+label {
+    font-size: 1.1em;
+    margin-right: 1em;
+}
+#div_nm, #div_fnm, #div_st {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+input, select {
+    flex-grow: 1;
+    font-size: 1em;
+    background-color: transparent;
+    border: 1px darkcyan solid;
+    border-radius: 3px;
+    color: darkcyan;
+    padding: 0.2%;
+}
+#choiceStatut div {
+    font-size: 0.8em;
+    margin-bottom: 2%;
+}
+input[type="radio"] {
+    margin-right: 1em;
+}
+#message {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#message textarea {
+    width: 95%;
+    font-size: 1em;
+    flex-grow: 0.9em;
+    border-radius: 5px;
+    border: 1px darkcyan solid;
+    padding: 1%;
+}
+button {
+    border-radius: 10px;
+    background-color: darkcyan;
+    color: white;
+    padding: 0.7em 1em;
+    font-size: 1em;
+    border: none;
+}
+button:hover {
+    background-color: #014e79;
+    transition-duration: 0.5s;
+}
+
+/*classes d'animations pour JavaScript*/
+
+.masque {
+    opacity: 0%;
+    margin-bottom: -4%;
+}
+.app {
+    opacity: 100%;
+    transition-duration: 0.5s;
+    margin-bottom: 0%;
+}
+.disp {
+    opacity: 0%;
+    transition-duration: 0.5s;
+    margin-bottom: -4%;
 }
