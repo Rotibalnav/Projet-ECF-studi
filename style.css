@@ -12,7 +12,7 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #0d6efd;
+  --bs-primary: darkcyan;
   --bs-secondary: #6c757d;
   --bs-success: darkcyan;
   --bs-info: #0dcaf0;
@@ -97,7 +97,7 @@ p{
 legend {
     width: 95%;
     text-align: center;
-    font-size: 5px;
+    font-size: 10px;
     color: rgb(214, 240, 230);
 }
 #gender {
@@ -134,14 +134,10 @@ legend {
     color: white;
     background-color: rgba(51, 143, 82, 0.41);
     background-image: none;
-    
-}
-#date {
-    padding: 0%;
 }
 .fa-solid {
-    transform:translateY(-160%);
-    margin-left: 70%;
+    transform:translateY(-170%);
+    margin-left: 10%;
     position: absolute;
 }
 button, input, optgroup, select, textarea {
@@ -186,11 +182,11 @@ button,.btn.btn-dark {
     border: none;
 }
 .btn.btn-success {
-    display: flex;
     background-color: darkcyan !important;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width:120px;
 }
 .btn-success,#connexion a {
     background-color: darkcyan;
@@ -465,8 +461,12 @@ html {
 form {
     margin: 3% 15%;
 }
-div, textarea, button {
-    margin: 1% 0%;
+div, button {
+    margin: 0% 0%;
+}
+textarea {
+    margin: 30px;
+    width: 50px;
 }
 fieldset {
     padding: 2%;
@@ -475,21 +475,25 @@ fieldset {
 }
 label {
     font-size: 1.1em;
-    margin-right: 1em;
+    margin-right: em;
 }
 #div_nm, #div_fnm, #div_st {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-input, select {
-    flex-grow: 1;
+select {
     font-size: 1em;
     background-color: transparent;
     border: 1px darkcyan solid;
     border-radius: 3px;
     color: darkcyan;
     padding: 0.2%;
+}
+input {
+    margin: 2px;
+    margin-right: 80px;
+    padding: 2px;
 }
 #choiceStatut div {
     font-size: 0.8em;
@@ -506,7 +510,8 @@ input[type="radio"] {
     align-items: center;
 }
 #message textarea {
-    width: 95%;
+    width: 30%;
+    margin:5%;
     font-size: 1em;
     flex-grow: 0.9em;
     border-radius: 5px;
@@ -514,6 +519,7 @@ input[type="radio"] {
     padding: 1%;
 }
 button {
+    width:90px;
     border-radius: 10px;
     background-color: darkcyan;
     color: white;
