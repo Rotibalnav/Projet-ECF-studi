@@ -4,23 +4,19 @@ USE Ecoride;
 
 --CREATION DE LA TABLE UTILISATEURS
 CREATE TABLE Utilisateurs (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID INT IDENTITY(1,1) PRIMARY KEY,
     sexe CHAR(1) NOT NULL,
     nom VARCHAR(50) NOT NULL,
-    prénom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
     age INT NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     telephone VARCHAR(15) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
-    vehicule ENUM('voiture') NOT NULL,
+    vehicule VARCHAR(20) NOT NULL CHECK (vehicule IN ('voiture')),
     marque VARCHAR(50) NOT NULL,
     modele VARCHAR(50) NOT NULL,
     annee INT NOT NULL,
-    energie_vehicule ENUM(
-        'thermique',
-        'hybride',
-        'electrique'
-    ) NOT NULL,
+    energie_vehicule VARCHAR(20) NOT NULL CHECK (energie_vehicule IN ('thermique','hybride','electrique')),
     matriculation VARCHAR(20) NOT NULL UNIQUE
 );
 
@@ -28,7 +24,7 @@ INSERT INTO
     utilisateurs (
         sexe,
         nom,
-        prénom,
+        prenom,
         age,
         email,
         telephone,
@@ -330,7 +326,7 @@ INSERT INTO
     Utilisateurs (
         sexe,
         nom,
-        prénom,
+        prenom,
         age,
         email,
         telephone,
@@ -360,13 +356,13 @@ VALUES (
 
 SELECT * FROM Utilisateurs;
 
-SELECT nom, prénom, email FROM Utilisateurs;
+SELECT nom, prenom, email FROM Utilisateurs;
 
 SELECT * FROM Utilisateurs WHERE age > 21;
 
 SELECT
     nom,
-    prénom,
+    prenom,
     email,
     energie_vehicule
 FROM Utilisateurs
@@ -375,7 +371,7 @@ WHERE
 
 SELECT
     nom,
-    prénom,
+    prenom,
     email,
     energie_vehicule
 FROM Utilisateurs
@@ -384,23 +380,21 @@ WHERE
 
 SELECT
     nom,
-    prénom,
+    prenom,
     email,
     energie_vehicule
 FROM Utilisateurs
 WHERE
     energie_vehicule = 'hybride';
 
-UPDATE Utilisateurs SET sexe = 'F' WHERE Id = 1;
+UPDATE Utilisateurs SET sexe = 'F' WHERE ID = 1;
 
-UPDATE Utilisateurs SET sexe = 'M' WHERE Id = 2;
+UPDATE Utilisateurs SET sexe = 'M' WHERE ID = 2;
 
-UPDATE Utilisateurs SET telephone = '0987654321' WHERE Id = 2;
+UPDATE Utilisateurs SET telephone = '0987654321' WHERE ID = 2;
 
-UPDATE vehicule SET marque = 'Renault' WHERE Id = 3;
+UPDATE Utilisateurs SET marque = 'Renault' WHERE ID = 3;
 
-DELETE FROM Utilisateurs WHERE Id = 4;
-
-DELETE FROM vehicule WHERE Id = 4;
+DELETE FROM Utilisateurs WHERE ID = 4;
 
 DROP DATABASE Ecoride;

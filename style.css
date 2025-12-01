@@ -12,7 +12,7 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #0d6efd;
+  --bs-primary: darkcyan;
   --bs-secondary: #6c757d;
   --bs-success: darkcyan;
   --bs-info: #0dcaf0;
@@ -35,6 +35,10 @@ body {
 nav {
     position: fixed;
 }
+li {
+    justify-content: space-around;
+    margin-left: 4px;
+}
 .navbar-expand-lg {
     text-align: center;
     color: darkcyan;
@@ -46,6 +50,10 @@ nav {
 .navbar {
     color: darkcyan;
     margin-top: 0px;
+}
+.nav-link.dropdown-toggle {
+    justify-content: end;
+    margin-right: 1165px
 }
 header {
     background-color: #343a40;
@@ -97,7 +105,7 @@ p{
 legend {
     width: 95%;
     text-align: center;
-    font-size: 5px;
+    font-size: 10px;
     color: rgb(214, 240, 230);
 }
 #gender {
@@ -131,17 +139,15 @@ legend {
     width: 95%;
 }
 #departure, #destination, #date {
+    margin-top: 2px;
     color: white;
-    background-color: rgba(51, 143, 82, 0.41);
+    border: darkcyan solid 2px;
+    background-color: transparent;
     background-image: none;
-    
-}
-#date {
-    padding: 0%;
 }
 .fa-solid {
-    transform:translateY(-160%);
-    margin-left: 70%;
+    transform:translateY(-170%);
+    margin-left:80%;
     position: absolute;
 }
 button, input, optgroup, select, textarea {
@@ -150,17 +156,17 @@ button, input, optgroup, select, textarea {
     line-height: inherit;
     margin-top: 10px;
     padding:10px;
-    width: 30%;
+    width: 70%;
     border-radius: 15px;
     border: 1px solid ;
 }
 select, #gender {
-    background-color: rgba(51, 143, 82, 0.41);
+    background-color: darkcyan;
 }
-input, #email, #first-name, #full-name, #date-of-year, #username, #password, #confirm-password {
-    background-color: rgba(51, 143, 82, 0.41);
-    border:1px solid rgba(247, 249, 250, 0.47);
-    color: var(--bs-light);
+input, #email, #firstname, #name, #dateofyear, #username, #password, #confirmpassword {
+    background-color: darkcyan;
+    border:1px solid darkcyan;
+    color: white;
 }
 .connexion {
     border: solid 5px darkcyan;
@@ -186,11 +192,11 @@ button,.btn.btn-dark {
     border: none;
 }
 .btn.btn-success {
-    display: flex;
     background-color: darkcyan !important;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width:120px;
 }
 .btn-success,#connexion a {
     background-color: darkcyan;
@@ -200,11 +206,21 @@ button,.btn.btn-dark {
     background-color: darkcyan;
     border: none;
 }
+button[type=submit]  {
+    width: 125px
+}
 .carousel-item img {
     height: 800px;
     object-fit: cover;
 }
 #searchcarpool {
+    backdrop-filter: blur(8px);
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 180px;
+    margin-top: -350px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -212,8 +228,25 @@ button,.btn.btn-dark {
     border:1px solid darkcyan;
     border-radius: 15px;
     padding: 30px;
-
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
 }
+/*form #contactForm {
+    backdrop-filter: blur(0px);
+    position:relative;
+    z-index: 100;
+    top: 580px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px !important;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin: 0px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
+}*/
 section {
     text-align: center;
     padding:5%;
@@ -455,4 +488,100 @@ div #searchcarpool {
     justify-content: center;
     margin-left: 125px;
 }
+}
+*/
+html {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: darkcyan;
+}
+form {
+    margin: 3% 15%;
+}
+div, button {
+    margin: 0% 0%;
+}
+textarea {
+    margin: 30px;
+    width: 50px;
+}
+fieldset {
+    padding: 2%;
+    border: 2px darkcyan solid;
+    border-radius: 5px;
+}
+label {
+    font-size: 1.1em;
+    margin-right: em;
+}
+#div_nm, #div_fnm, #div_st {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+select {
+    font-size: 1em;
+    background-color: transparent;
+    border: 1px darkcyan solid;
+    border-radius: 3px;
+    color: darkcyan;
+    padding: 0.2%;
+}
+input {
+    margin: 2px;
+    margin-right: 80px;
+    padding: 2px;
+}
+#choiceStatut div {
+    font-size: 0.8em;
+    margin-bottom: 2%;
+}
+input[type="radio"] {
+    margin-right: 1em;
+}
+#message {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#message textarea {
+    width: 30%;
+    margin:5%;
+    font-size: 1em;
+    flex-grow: 0.9em;
+    border-radius: 5px;
+    border: 1px darkcyan solid;
+    padding: 1%;
+}
+button {
+    width:90px;
+    border-radius: 10px;
+    background-color: darkcyan;
+    color: white;
+    padding: 0.7em 1em;
+    font-size: 1em;
+    border: none;
+}
+button:hover {
+    background-color: #014e79;
+    transition-duration: 0.5s;
+}
+
+/*classes d'animations pour JavaScript*/
+
+.masque {
+    opacity: 0%;
+    margin-bottom: -4%;
+}
+.app {
+    opacity: 100%;
+    transition-duration: 0.5s;
+    margin-bottom: 0%;
+}
+.disp {
+    opacity: 0%;
+    transition-duration: 0.5s;
+    margin-bottom: -4%;
 }
