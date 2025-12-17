@@ -182,7 +182,9 @@ input, #email, #firstname, #name, #dateofyear, #username, #password, #confirmpas
     background-color: var(--bs-green);
     border: white;
 }
-
+.carousel{
+    bottom: 90px;
+}
 .form-check-label {
     color: white;
 }
@@ -217,7 +219,7 @@ button[type=submit]  {
     backdrop-filter: blur(8px);
     position:relative;
     z-index: 100;
-    top: 580px;
+    top: 500px;
     left: 180px;
     margin-top: -350px;
     width: 400px;
