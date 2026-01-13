@@ -24,6 +24,11 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
+html {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: darkcyan;
+}
 * {
     margin: 0px;
     padding: 0;
@@ -51,9 +56,9 @@ li {
     color: darkcyan;
     margin-top: 0px;
 }
-.nav-link.dropdown-toggle {
-    justify-content: end;
-    margin-right: 1165px
+.dropdown-item  {
+    text-align: center !important;
+    padding: 0,05rem 1rem;
 }
 header {
     background-color: #343a40;
@@ -63,6 +68,7 @@ h1 {
     color: darkcyan;
     font-size: 2.5em;
     text-align: center;
+    margin-top: 75px;
 }
 .container-fluid .text-center {
   padding-top: 10px;
@@ -116,23 +122,6 @@ legend {
   width: 100%;
   color:white;
 }
-/*form #contactForm {
-    backdrop-filter: blur(0px);
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 250px;
-    width: 400px;
-    height: 400px;
-    padding: 15px;
-    padding-left: 20px;
-    padding-right: 20px !important;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 0px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}*/
 .form-select {
     border: none;
     border-radius: none;
@@ -146,8 +135,8 @@ legend {
     background-image: none;
 }
 .fa-solid {
-    transform:translateY(-170%);
-    margin-left:80%;
+    transform:translateY(-200%);
+    margin-left:78%;
     position: absolute;
 }
 button, input, optgroup, select, textarea {
@@ -232,23 +221,6 @@ button[type=submit]  {
     padding: 30px;
     box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
 }
-/*form #contactForm {
-    backdrop-filter: blur(0px);
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 250px;
-    width: 400px;
-    height: 400px;
-    padding: 15px;
-    padding-left: 20px;
-    padding-right: 20px !important;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 0px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}*/
 section {
     text-align: center;
     padding:5%;
@@ -273,13 +245,6 @@ section {
     justify-content: center;
     align-items: center;
 }
-
-/*#À_propos {
-    text-align: center;
-}
-#À_propos p {
-    margin-bottom: 3rem;
-}*/
 footer {
     text-align: center;
     padding: 10px;
@@ -316,186 +281,6 @@ footer {
 .mentions-légales {
     text-align: center;
     margin-top: 80px;
-}
-
-/*@media screen and (max-width: 350px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left:0px;
-    width: 255px;
-    height: 400px;
-    padding-left: 10px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 60px;
-}
-}
-@media screen and (min-width: 351px) and (max-width: 575px) {
-    div #searchcarpool {
-        position:relative;
-        z-index: 100;
-        top: 580px;
-        left: 100px;
-        width: 255px;
-        height: 400px;
-        padding-left: 10px;
-        border: solid 1px #ccc;
-        border-radius: 15px;
-        margin: 30px;
-        margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-    }
-    .btn-success {
-        margin-top: 20px;
-        justify-content: center;
-        margin-left: 60px;
-    }
-}
-@media (min-width: 576px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 70px;
-    width: 400px;
-    height: 400px;
-    padding-left: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
-}
-}
-
-@media (min-width: 768px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 150px;
-    width: 400px;
-    height: 400px;
-    padding-left: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
-}
-}
-@media (min-width: 992px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 250px;
-    width: 400px;
-    height: 400px;
-    padding-left: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
-}
-}
-@media (min-width: 1200px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 250px;
-    width: 400px;
-    height: 400px;
-    padding-left: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
-}
-}
-@media (min-width: 1400px) {
-div #searchcarpool {
-    position:relative;
-    z-index: 100;
-    top: 580px;
-    left: 250px;
-    width: 400px;
-    height: 400px;
-    padding-left: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin: 30px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(63, 186, 33, 0.39) inset;
-}
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
-}
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
-}
-}
-*/
-html {
-    width: 100%;
-    font-family: Arial, sans-serif;
-    color: darkcyan;
 }
 form {
     margin: 3% 15%;
@@ -587,3 +372,202 @@ button:hover {
     transition-duration: 0.5s;
     margin-bottom: -4%;
 }
+
+@media screen and (max-width: 350px) {
+.carousel-item img {
+    margin-top: 15px;
+}
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 100;
+    top: 500px;
+    left:33px;
+    margin-top: -350px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 13px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+}
+}
+/*
+@media screen and (min-width: 350px) and (max-width: 390px) {
+    #searchcarpool {
+    backdrop-filter: blur(8px);   
+    position:relative;
+    z-index: 100;
+    top: 500px;
+    left:30px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    padding: 20px;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    margin-top: -350px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+    }
+    .btn-success {
+        margin-top: 20px;
+        justify-content: center;
+        margin-left: 10px;
+    }
+}
+@media (min-width: 390px) {
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 100;
+    top: 500px;
+    left:50px;
+    margin-top: -350px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 10px;
+}
+}
+@media (min-width: 768px) {
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position:relative;
+    z-index: 100;
+    top: 500px;
+    left:30px;
+    margin-top: -350px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 992px) {
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 100;
+    top: 500px;
+    left:30px;
+    margin-top: -350px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 1200px) {
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 100;
+    top: 500px;
+    left:30px;
+    margin-top: -350px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+@media (min-width: 1400px) {
+#searchcarpool {
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 100;
+    top: 500px;
+    left:30px;
+    margin-top: -350px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+}
+.form-select {
+    color:var(--bs-light);
+    background-color:rgba(51, 143, 82, 0.41) ;
+    border:1px solid rgba(247, 249, 250, 0.47);
+}
+.btn-success {
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 125px;
+}
+}
+*/
