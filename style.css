@@ -162,7 +162,7 @@ input, #email, #firstname, #name, #dateofyear, #username, #password, #confirmpas
     border-radius: 15px;
     padding: 15px;
 }
-.inscription{
+.inscription {
     border: solid 5px darkcyan;
     border-radius: 15px;
     padding: 15px;
@@ -171,7 +171,7 @@ input, #email, #firstname, #name, #dateofyear, #username, #password, #confirmpas
     background-color: var(--bs-green);
     border: white;
 }
-.carousel{
+.carousel {
     bottom: 90px;
 }
 .form-check-label {
@@ -399,175 +399,400 @@ button:hover {
     justify-content: center;
 }
 }
-/*
-@media screen and (min-width: 350px) and (max-width: 390px) {
-    #searchcarpool {
-    backdrop-filter: blur(8px);   
-    position:relative;
-    z-index: 100;
-    top: 500px;
-    left:30px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    padding: 20px;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    margin-top: -350px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
-    }
-    .btn-success {
-        margin-top: 20px;
-        justify-content: center;
-        margin-left: 10px;
-    }
+
+/* =====================================================
+   ECO-RIDE – GLASSMORPHISM UI (Contact + Connexion)
+   Goal: match the "Rechercher un trajet" style (index)
+   ===================================================== */
+
+/* A reusable glass card (same vibe as #searchcarpool) */
+.eco-glass-card,
+#formulaire fieldset,
+.connexion,
+.inscription {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(3, 75, 90, 0.22);
+  border: 1px solid rgba(26, 146, 138, 0.75);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.22) inset;
 }
-@media (min-width: 390px) {
-#searchcarpool {
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 100;
-    top: 500px;
-    left:50px;
-    margin-top: -350px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+
+/* Page spacing under the fixed navbar (without touching the homepage layout too much) */
+body > header,
+body > h1 {
+  margin-top: 80px;
 }
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
+
+/* CONTACT FORM – layout */
+#formulaire {
+  width: min(860px, 92vw);
+  margin: 30px auto 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 10px;
+
+#formulaire fieldset {
+  border: none;
 }
+
+#formulaire legend h2 {
+  margin: 0;
+  font-size: 28px;
+  color: rgb(214, 240, 230);
 }
-@media (min-width: 768px) {
-#searchcarpool {
-    backdrop-filter: blur(8px);
-    position:relative;
-    z-index: 100;
-    top: 500px;
-    left:30px;
-    margin-top: -350px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+
+#formulaire h1 {
+  color: rgb(214, 240, 230);
+  text-align: center;
+  margin: 10px 0 25px 0;
 }
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
+
+#formulaire label {
+  color: rgb(214, 240, 230);
+  font-weight: 600;
 }
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
+
+/* CONTACT FORM – grid for info section */
+#infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
+
+#infos #choiceStatut {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
-@media (min-width: 992px) {
-#searchcarpool {
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 100;
-    top: 500px;
-    left:30px;
-    margin-top: -350px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+
+#choiceStatut > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
+
+#message {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
+
+/* INPUTS – transparent with teal border */
+#formulaire input,
+#formulaire select,
+#formulaire textarea,
+.connexion input,
+.inscription input,
+.inscription select,
+.connexion .form-control,
+.inscription .form-control,
+.inscription .form-select {
+  width: 100% !important;
+  background: transparent !important;
+  border: 2px solid rgba(26, 146, 138, 0.85) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
+
+#formulaire select,
+.inscription select {
+  appearance: none;
 }
-@media (min-width: 1200px) {
-#searchcarpool {
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 100;
-    top: 500px;
-    left:30px;
-    margin-top: -350px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+
+#formulaire textarea {
+  min-height: 180px;
+  resize: vertical;
 }
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
+
+#formulaire input::placeholder,
+#formulaire textarea::placeholder,
+.connexion input::placeholder,
+.inscription input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
 }
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
+
+#formulaire input:focus,
+#formulaire select:focus,
+#formulaire textarea:focus,
+.connexion input:focus,
+.inscription input:focus,
+.inscription select:focus {
+  border-color: rgba(214, 240, 230, 0.9) !important;
+  box-shadow: 0 0 0 3px rgba(26, 146, 138, 0.28) !important;
 }
+
+/* Radio look */
+#choiceStatut input[type="radio"] {
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  accent-color: darkcyan;
 }
-@media (min-width: 1400px) {
-#searchcarpool {
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 100;
-    top: 500px;
-    left:30px;
-    margin-top: -350px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 46px 37px rgba(26, 146, 138, 0.39) inset;
+
+#choiceStatut label {
+  margin: 0;
 }
-.form-select {
-    color:var(--bs-light);
-    background-color:rgba(51, 143, 82, 0.41) ;
-    border:1px solid rgba(247, 249, 250, 0.47);
+
+/* Buttons – same teal */
+#formulaire button,
+.connexion button,
+.inscription button,
+.btn.btn-dark {
+  background: darkcyan !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  padding: 10px 18px !important;
+  width: fit-content !important;
+  min-width: 140px;
+  font-weight: 700;
 }
-.btn-success {
-    margin-top: 20px;
-    justify-content: center;
-    margin-left: 125px;
+
+#formulaire button:hover,
+.connexion button:hover,
+.inscription button:hover,
+.btn.btn-dark:hover {
+  filter: brightness(1.06);
 }
+
+/* Center CTA buttons like on the homepage card */
+#formulaire button {
+  align-self: center;
 }
-*/
+.connexion button,
+.inscription button {
+  display: block;
+  margin: 6px auto 0 auto;
+}
+
+/* AUTH PAGE – center cards like the search card */
+header h1 {
+  color: rgb(214, 240, 230);
+  text-align: center;
+  margin-top: 10px;
+}
+
+main {
+  width: min(960px, 92vw);
+  margin: 20px auto 60px auto;
+}
+
+#connexion, #inscription {
+  margin-top: 18px;
+}
+
+#connexion .row, #inscription .row {
+  justify-content: center;
+}
+
+.connexion,
+.inscription {
+  width: min(860px, 92vw);
+  margin: 18px auto;
+}
+
+#connexion a.btn,
+#inscription a.btn {
+  background: darkcyan !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 10px 18px;
+  font-weight: 700;
+}
+
+/* Fix the old global rule that forces 70% width on inputs */
+#formulaire input, #formulaire select, #formulaire textarea,
+.connexion input,
+.inscription input, .inscription select {
+  width: 100% !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #infos {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================
+   FIX CONTACT FORM – Alignement propre & lisible
+   (à coller TOUT EN BAS de style.css)
+   ============================================ */
+
+#formulaire {
+  width: min(920px, 92vw);
+  margin: 110px auto 60px auto; /* espace sous la navbar */
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* FIELDSETS glass */
+#formulaire fieldset {
+  border: none !important;
+  border-radius: 18px;
+  padding: 28px 30px;
+}
+
+/* TITRES */
+#formulaire h1 {
+  text-align: center;
+  color: rgb(214, 240, 230);
+  margin-bottom: 10px;
+}
+
+#formulaire legend h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  color: rgb(214, 240, 230);
+}
+
+/* ============================================
+   INFOS : 2 colonnes + lignes bien alignées
+   ============================================ */
+
+#formulaire #infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+/* Nom / Prenom / Vehicule => label + input alignés */
+#formulaire #div_nm,
+#formulaire #div_fnm,
+#formulaire #div_st {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Véhicule en pleine largeur */
+#formulaire #div_st {
+  grid-column: 1 / -1;
+}
+
+/* Labels alignés */
+#formulaire #div_nm label,
+#formulaire #div_fnm label,
+#formulaire #div_st label {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Statut => ligne propre */
+#formulaire #choiceStatut {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+#formulaire #choiceStatut > label {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Les 2 options sur la même ligne */
+#formulaire #choiceStatut > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+#formulaire #choiceStatut {
+  row-gap: 10px;
+}
+
+#formulaire #choiceStatut > div:nth-child(2),
+#formulaire #choiceStatut > div:nth-child(3) {
+  grid-column: 2;
+}
+
+/* ============================================
+   MESSAGE : EN PLEINE LARGEUR + textarea clean
+   ============================================ */
+
+#formulaire #message {
+  display: flex !important;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch !important; /* ✅ IMPORTANT (corrige ton bug) */
+}
+
+/* Objet + Email en 2 colonnes */
+#formulaire #message > div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+#formulaire #message > div label {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Select et input prennent toute la largeur */
+#formulaire #message select,
+#formulaire #message input {
+  width: 100% !important;
+}
+
+/* Textarea : full width */
+#formulaire #message textarea {
+  width: 100% !important;
+  min-height: 220px;
+  margin: 6px 0 0 0 !important;
+  resize: vertical;
+}
+
+/* Bouton bien centré */
+#formulaire #message button {
+  align-self: center;
+  margin-top: 14px;
+}
+
+/* ============================================
+   MOBILE : tout s'empile proprement
+   ============================================ */
+@media (max-width: 768px) {
+  #formulaire #infos {
+    grid-template-columns: 1fr;
+  }
+
+  #formulaire #div_nm,
+  #formulaire #div_fnm,
+  #formulaire #div_st,
+  #formulaire #choiceStatut,
+  #formulaire #message > div {
+    grid-template-columns: 1fr;
+  }
+
+  #formulaire #div_nm label,
+  #formulaire #div_fnm label,
+  #formulaire #div_st label,
+  #formulaire #choiceStatut > label,
+  #formulaire #message > div label {
+    text-align: left;
+  }
+
+  #formulaire #choiceStatut > div:nth-child(2),
+  #formulaire #choiceStatut > div:nth-child(3) {
+    grid-column: 1;
+  }
+}
