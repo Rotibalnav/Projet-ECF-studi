@@ -1,400 +1,208 @@
-CREATE DATABASE Ecoride;
 
-USE Ecoride;
+-- Database: ecoride
 
---CREATION DE LA TABLE UTILISATEURS
-CREATE TABLE Utilisateurs (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    sexe CHAR(1) NOT NULL,
-    nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(50) NOT NULL,
-    age INT NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    telephone VARCHAR(15) NOT NULL UNIQUE,
-    mot_de_passe VARCHAR(255) NOT NULL,
-    vehicule VARCHAR(20) NOT NULL CHECK (vehicule IN ('voiture')),
-    marque VARCHAR(50) NOT NULL,
-    modele VARCHAR(50) NOT NULL,
-    annee INT NOT NULL,
-    energie_vehicule VARCHAR(20) NOT NULL CHECK (energie_vehicule IN ('thermique','hybride','electrique')),
-    matriculation VARCHAR(20) NOT NULL UNIQUE
-);
+DROP DATABASE IF EXISTS ecoride;
 
-INSERT INTO
-    utilisateurs (
-        sexe,
-        nom,
-        prenom,
-        age,
-        email,
-        telephone,
-        mot_de_passe,
-        vehicule,
-        marque,
-        modele,
-        annee,
-        energie_vehicule,
-        matriculation
-    )
-VALUES (
-        'M',
-        'Johnson',
-        'Alex',
-        21,
-        'alex.johnson@example.com',
-        '0123456789',
-        'password234',
-        'voiture',
-        'Ford',
-        'Fiesta',
-        2019,
-        'hybride',
-        'DEF234'
-    ),
-    (
-        'F',
-        'Smith',
-        'Jane',
-        24,
-        'jane.smith@example.com',
-        '0173456789',
-        'password456',
-        'voiture',
-        'Honda',
-        'Civic',
-        2019,
-        'hybride',
-        'XYZ789'
-    ),
-    (
-        'M',
-        'Brown',
-        'Mike',
-        23,
-        'mike.brown@example.com',
-        '022456789',
-        'password789',
-        'voiture',
-        'Ford',
-        'Focus',
-        2021,
-        'thermique',
-        'DEF456'
-    ),
-    (
-        'F',
-        'Davis',
-        'Emily',
-        25,
-        'emily.davis@example.com',
-        '0323456789',
-        'password101',
-        'voiture',
-        'Chevrolet',
-        'Malibu',
-        2020,
-        'hybride',
-        'GHI789'
-    ),
-    (
-        'M',
-        'Wilson',
-        'Chris',
-        26,
-        'chris.wilson@example.com',
-        '0423456789',
-        'password202',
-        'voiture',
-        'Nissan',
-        'Altima',
-        2021,
-        'electrique',
-        'JKL012'
-    ),
-    (
-        'F',
-        'Taylor',
-        'Jessica',
-        27,
-        'jessica.taylor@example.com',
-        '0523456789',
-        'password303',
-        'voiture',
-        'Hyundai',
-        'Elantra',
-        2020,
-        'thermique',
-        'MNO345'
-    ),
-    (
-        'M',
-        'Garcia',
-        'David',
-        28,
-        'david.garcia@example.com',
-        '0623456789',
-        'password404',
-        'voiture',
-        'Kia',
-        'Optima',
-        2021,
-        'hybride',
-        'PQR678'
-    ),
-    (
-        'F',
-        'Martinez',
-        'Sophia',
-        29,
-        'sophia.martinez@example.com',
-        '0123456779',
-        'password505',
-        'voiture',
-        'Mazda',
-        'CX-5',
-        2020,
-        'thermique',
-        'STU901'
-    ),
-    (
-        'M',
-        'Hernandez',
-        'James',
-        30,
-        'james.hernandez@example.com',
-        '0123458789',
-        'password606',
-        'voiture',
-        'Subaru',
-        'Outback',
-        2021,
-        'electrique',
-        'VWX234'
-    ),
-    (
-        'F',
-        'Lopez',
-        'Isabella',
-        31,
-        'isabella.lopez@example.com',
-        '0123459789',
-        'password707',
-        'voiture',
-        'Volkswagen',
-        'Golf',
-        2020,
-        'thermique',
-        'YZA567'
-    ),
-    (
-        'M',
-        'Gonzalez',
-        'Daniel',
-        32,
-        'daniel.gonzalez@example.com',
-        '0123456189',
-        'password808',
-        'voiture',
-        'Chevrolet',
-        'Malibu',
-        2020,
-        'hybride',
-        'BCD678'
-    ),
-    (
-        'F',
-        'Perez',
-        'Mia',
-        33,
-        'mia.perez@example.com',
-        '0123116789',
-        'password909',
-        'voiture',
-        'Toyota',
-        'Camry',
-        2020,
-        'thermique',
-        'EFG012'
-    ),
-    (
-        'M',
-        'Sanchez',
-        'Ethan',
-        34,
-        'ethan.sanchez@example.com',
-        '0121256789',
-        'password010',
-        'voiture',
-        'Honda',
-        'Accord',
-        2020,
-        'electrique',
-        'HIJ345'
-    ),
-    (
-        'F',
-        'Skander',
-        'Stella',
-        22,
-        'stella.skander@example.com',
-        '0121356789',
-        'password111',
-        'voiture',
-        'Nissan',
-        'Sentra',
-        2020,
-        'thermique',
-        'JKL456'
-    ),
-    (
-        'M',
-        'Nguyen',
-        'Liam',
-        23,
-        'liam.nguyen@example.com',
-        '0114456789',
-        'password222',
-        'voiture',
-        'Toyota',
-        'Camry',
-        2020,
-        'electrique',
-        'MNO678'
-    ),
-    (
-        'F',
-        'King',
-        'Fabienne',
-        24,
-        'fabienne.king@example.com',
-        '0123451589',
-        'password333',
-        'voiture',
-        'Peugeot',
-        '308',
-        2020,
-        'thermique',
-        'PQR789'
-    ),
-    (
-        'M',
-        'Wright',
-        'Noah',
-        25,
-        'noah.wright@example.com',
-        '0123166789',
-        'password444',
-        'voiture',
-        'Tesla',
-        'Model 3',
-        2020,
-        'electrique',
-        'STU012'
-    ),
-    (
-        'F',
-        'Lopez',
-        'Chloe',
-        26,
-        'chloe.lopez@example.com',
-        '0123176789',
-        'password555',
-        'voiture',
-        'BMW',
-        'X3',
-        2020,
-        'thermique',
-        'VWX345'
-    ),
-    (
-        'M',
-        'Hill',
-        'Mason',
-        27,
-        'mason.hill@example.com',
-        '0123418789',
-        'password666',
-        'voiture',
-        'Audi',
-        'A4',
-        2020,
-        'electrique',
-        'YZA678'
-    );
+CREATE DATABASE ecoride
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
 
-INSERT INTO
-    Utilisateurs (
-        sexe,
-        nom,
-        prenom,
-        age,
-        email,
-        telephone,
-        mot_de_passe,
-        vehicule,
-        marque,
-        modele,
-        annee,
-        energie_vehicule,
-        matriculation
-    )
-VALUES (
-        'M',
-        'lourmel',
-        'Joshua',
-        22,
-        'joshua.lourmel@example.com',
-        '0145456789',
-        'password123',
-        'voiture',
-        'Mercedes',
-        'Classe GLE',
-        2020,
-        'hybride',
-        'ABC123'
-    );
+USE ecoride;
 
-SELECT * FROM Utilisateurs;
+/* 
+TABLE UTILISATEURS
+*/
+DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS trajets;
+DROP TABLE IF EXISTS utilisateurs;
 
-SELECT nom, prenom, email FROM Utilisateurs;
+CREATE TABLE utilisateurs (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 
-SELECT * FROM Utilisateurs WHERE age > 21;
+  role ENUM('conducteur','passager') NOT NULL DEFAULT 'passager',
 
-SELECT
-    nom,
-    prenom,
-    email,
-    energie_vehicule
-FROM Utilisateurs
-WHERE
-    energie_vehicule = 'electrique';
+  sexe ENUM('M','F') NOT NULL,
+  nom VARCHAR(50) NOT NULL,
+  prenom VARCHAR(50) NOT NULL,
+  age TINYINT UNSIGNED NOT NULL,
 
-SELECT
-    nom,
-    prenom,
-    email,
-    energie_vehicule
-FROM Utilisateurs
-WHERE
-    energie_vehicule = 'thermique';
+  email VARCHAR(255) NOT NULL UNIQUE,
+  telephone VARCHAR(20) NOT NULL UNIQUE,
 
-SELECT
-    nom,
-    prenom,
-    email,
-    energie_vehicule
-FROM Utilisateurs
-WHERE
-    energie_vehicule = 'hybride';
+  -- Stocke un hash bcrypt (jamais un mot de passe en clair)
+  mot_de_passe VARCHAR(255) NOT NULL,
 
-UPDATE Utilisateurs SET sexe = 'F' WHERE ID = 1;
+  -- Passager : vehicule = 'aucun', champs voiture = NULL
+  vehicule ENUM('voiture','aucun') NOT NULL DEFAULT 'aucun',
+  marque VARCHAR(50) NULL,
+  modele VARCHAR(50) NULL,
+  annee SMALLINT UNSIGNED NULL,
+  energie_vehicule ENUM('thermique','hybride','electrique') NULL,
+  immatriculation VARCHAR(20) NULL UNIQUE,
 
-UPDATE Utilisateurs SET sexe = 'M' WHERE ID = 2;
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
 
-UPDATE Utilisateurs SET telephone = '0987654321' WHERE ID = 2;
+/* =========================
+   TABLE TRAJETS
+   ========================= */
 
-UPDATE Utilisateurs SET marque = 'Renault' WHERE ID = 3;
+CREATE TABLE trajets (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 
-DELETE FROM Utilisateurs WHERE ID = 4;
+  conducteur_id INT UNSIGNED NOT NULL,
 
-DROP DATABASE Ecoride;
+  date_trajet DATE NOT NULL,
+  heure_depart TIME NULL,
+
+  depart VARCHAR(120) NOT NULL,
+  destination VARCHAR(120) NOT NULL,
+
+  places_total TINYINT UNSIGNED NOT NULL DEFAULT 1,
+  places_restantes TINYINT UNSIGNED NOT NULL DEFAULT 1,
+
+  prix DECIMAL(10,2) NULL,
+  commentaire VARCHAR(255) NULL,
+
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT fk_trajets_conducteur
+    FOREIGN KEY (conducteur_id) REFERENCES utilisateurs(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+/* =========================
+   TABLE RESERVATIONS
+   ========================= */
+
+CREATE TABLE reservations (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+
+  trajet_id INT UNSIGNED NOT NULL,
+  passager_id INT UNSIGNED NOT NULL,
+
+  places_reservees TINYINT UNSIGNED NOT NULL DEFAULT 1,
+
+  statut ENUM('en_attente','acceptee','refusee','annulee') NOT NULL DEFAULT 'en_attente',
+
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT fk_res_trajet
+    FOREIGN KEY (trajet_id) REFERENCES trajets(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+
+  CONSTRAINT fk_res_passager
+    FOREIGN KEY (passager_id) REFERENCES utilisateurs(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+/* =========================================================
+   DONNÉES DE TEST
+   - Hash bcrypt (mot de passe : password123)
+   - 20 conducteurs + 20 passagers
+   ========================================================= */
+
+SET @PWD_HASH = '$2b$10$B3RFAALDOCaXQVl3pNrnve4Y2Xm97Q9TvXVj0islrwlgVynPBpLBu';
+
+/* ---------- 20 CONDUCTEURS (avec voiture) ---------- */
+INSERT INTO utilisateurs (
+  role, sexe, nom, prenom, age, email, telephone, mot_de_passe,
+  vehicule, marque, modele, annee, energie_vehicule, immatriculation
+) VALUES
+('conducteur','M','Johnson','Alex',21,'alex.johnson@example.com','0123456789',@PWD_HASH,'voiture','Ford','Fiesta',2019,'hybride','DEF234'),
+('conducteur','F','Smith','Jane',24,'jane.smith@example.com','0173456789',@PWD_HASH,'voiture','Honda','Civic',2019,'hybride','XYZ789'),
+('conducteur','M','Brown','Mike',23,'mike.brown@example.com','0223456789',@PWD_HASH,'voiture','Ford','Focus',2021,'thermique','DEF456'),
+('conducteur','F','Davis','Emily',25,'emily.davis@example.com','0323456789',@PWD_HASH,'voiture','Chevrolet','Malibu',2020,'hybride','GHI789'),
+('conducteur','M','Wilson','Chris',26,'chris.wilson@example.com','0423456789',@PWD_HASH,'voiture','Nissan','Altima',2021,'electrique','JKL012'),
+('conducteur','F','Taylor','Jessica',27,'jessica.taylor@example.com','0523456789',@PWD_HASH,'voiture','Hyundai','Elantra',2020,'thermique','MNO345'),
+('conducteur','M','Garcia','David',28,'david.garcia@example.com','0623456789',@PWD_HASH,'voiture','Kia','Optima',2021,'hybride','PQR678'),
+('conducteur','F','Martinez','Sophia',29,'sophia.martinez@example.com','0123456779',@PWD_HASH,'voiture','Mazda','CX-5',2020,'thermique','STU901'),
+('conducteur','M','Hernandez','James',30,'james.hernandez@example.com','0123458789',@PWD_HASH,'voiture','Subaru','Outback',2021,'electrique','VWX234'),
+('conducteur','F','Lopez','Isabella',31,'isabella.lopez@example.com','0123459789',@PWD_HASH,'voiture','Volkswagen','Golf',2020,'thermique','YZA567'),
+('conducteur','M','Gonzalez','Daniel',32,'daniel.gonzalez@example.com','0123456189',@PWD_HASH,'voiture','Chevrolet','Malibu',2020,'hybride','BCD678'),
+('conducteur','F','Perez','Mia',33,'mia.perez@example.com','0123116789',@PWD_HASH,'voiture','Toyota','Camry',2020,'thermique','EFG012'),
+('conducteur','M','Sanchez','Ethan',34,'ethan.sanchez@example.com','0121256789',@PWD_HASH,'voiture','Honda','Accord',2020,'electrique','HIJ345'),
+('conducteur','F','Skander','Stella',22,'stella.skander@example.com','0121356789',@PWD_HASH,'voiture','Nissan','Sentra',2020,'thermique','JKL456'),
+('conducteur','M','Nguyen','Liam',23,'liam.nguyen@example.com','0114456789',@PWD_HASH,'voiture','Toyota','Camry',2020,'electrique','MNO678'),
+('conducteur','F','King','Fabienne',24,'fabienne.king@example.com','0123451589',@PWD_HASH,'voiture','Peugeot','308',2020,'thermique','PQR789'),
+('conducteur','M','Wright','Noah',25,'noah.wright@example.com','0123166789',@PWD_HASH,'voiture','Tesla','Model 3',2020,'electrique','STU012'),
+('conducteur','F','Lopez','Chloe',26,'chloe.lopez@example.com','0123176789',@PWD_HASH,'voiture','BMW','X3',2020,'thermique','VWX345'),
+('conducteur','M','Hill','Mason',27,'mason.hill@example.com','0123418789',@PWD_HASH,'voiture','Audi','A4',2020,'electrique','YZA678'),
+('conducteur','M','Lourmel','Joshua',22,'joshua.lourmel@example.com','0145456789',@PWD_HASH,'voiture','Mercedes','Classe GLE',2020,'hybride','ABC123');
+
+/* ---------- 20 PASSAGERS (SANS voiture) ---------- */
+INSERT INTO utilisateurs (
+  role, sexe, nom, prenom, age, email, telephone, mot_de_passe,
+  vehicule, marque, modele, annee, energie_vehicule, immatriculation
+) VALUES
+('passager','M','Dupont','Karim',22,'passager01@ecoride.test','0700000001',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Martin','Sarah',21,'passager02@ecoride.test','0700000002',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Bernard','Yanis',25,'passager03@ecoride.test','0700000003',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Thomas','Ines',23,'passager04@ecoride.test','0700000004',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Petit','Mehdi',28,'passager05@ecoride.test','0700000005',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Robert','Lina',20,'passager06@ecoride.test','0700000006',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Richard','Nassim',26,'passager07@ecoride.test','0700000007',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Durand','Maya',24,'passager08@ecoride.test','0700000008',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Moreau','Ilyes',19,'passager09@ecoride.test','0700000009',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Simon','Amel',27,'passager10@ecoride.test','0700000010',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Laurent','Rayan',30,'passager11@ecoride.test','0700000011',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Lefevre','Chahinez',22,'passager12@ecoride.test','0700000012',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Michel','Adam',31,'passager13@ecoride.test','0700000013',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Garcia','Nour',18,'passager14@ecoride.test','0700000014',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Fournier','Anis',29,'passager15@ecoride.test','0700000015',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Roux','Yasmine',26,'passager16@ecoride.test','0700000016',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Vincent','Samy',24,'passager17@ecoride.test','0700000017',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Blanc','Aya',33,'passager18@ecoride.test','0700000018',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','M','Fontaine','Hugo',21,'passager19@ecoride.test','0700000019',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Chevalier','Selma',28,'passager20@ecoride.test','0700000020',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL);
+
+/* =========================================================
+   BONUS: 5 trajets de test créés par 5 conducteurs
+   (ids 1..20 sont les conducteurs insérés plus haut)
+   ========================================================= */
+
+INSERT INTO trajets (
+  conducteur_id, date_trajet, heure_depart,
+  depart, destination, places_total, places_restantes,
+  prix, commentaire
+) VALUES
+(1,'2026-01-22','08:30:00','Paris','Lille',3,3,15.00,'Trajet calme, pas de musique forte.'),
+(2,'2026-01-22','14:00:00','Lyon','Grenoble',2,2,10.00,'Départ à l\'heure.'),
+(3,'2026-01-23','09:15:00','Marseille','Nice',3,3,18.00,'Pause café possible.'),
+(4,'2026-01-24','07:45:00','Toulouse','Bordeaux',4,4,22.00,'Voiture confortable.'),
+(5,'2026-01-25','19:00:00','Nantes','Rennes',2,2,8.00,'Trajet rapide.');
+
+/* =========================================================
+   BONUS: 3 reservations de test (passagers ids 21..40)
+   ========================================================= */
+
+INSERT INTO reservations (trajet_id, passager_id, places_reservees, statut) VALUES
+(1,21,1,'en_attente'),
+(1,22,1,'acceptee'),
+(2,23,1,'en_attente');
+
+/* =========================
+   REQUÊTES DE TEST
+   ========================= */
+
+-- Compter conducteurs vs passagers
+SELECT role, COUNT(*) AS total
+FROM utilisateurs
+GROUP BY role;
+
+-- Lister les trajets
+SELECT t.*, u.nom, u.prenom
+FROM trajets t
+JOIN utilisateurs u ON u.id = t.conducteur_id
+ORDER BY t.date_trajet ASC;
+
+-- Voir les reservations
+SELECT r.*, t.depart, t.destination, p.nom AS passager_nom, p.prenom AS passager_prenom
+FROM reservations r
+JOIN trajets t ON t.id = r.trajet_id
+JOIN utilisateurs p ON p.id = r.passager_id
+ORDER BY r.created_at DESC;
