@@ -1,5 +1,5 @@
 
--- Database: ecoride
+/* Database: ecoride*/
 
 DROP DATABASE IF EXISTS ecoride;
 
@@ -9,13 +9,12 @@ CREATE DATABASE ecoride
 
 USE ecoride;
 
-/* 
-TABLE UTILISATEURS
-*/
+/* TABLE UTILISATEURS*/
 DROP TABLE IF EXISTS reservations;
 DROP TABLE IF EXISTS trajets;
 DROP TABLE IF EXISTS utilisateurs;
 
+/* creation de la table utilisateurs */
 CREATE TABLE utilisateurs (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 
@@ -29,10 +28,10 @@ CREATE TABLE utilisateurs (
   email VARCHAR(255) NOT NULL UNIQUE,
   telephone VARCHAR(20) NOT NULL UNIQUE,
 
-  -- Stocke un hash bcrypt (jamais un mot de passe en clair)
+/*Stocke un hash bcrypt (jamais un mot de passe en clair) */
   mot_de_passe VARCHAR(255) NOT NULL,
 
-  -- Passager : vehicule = 'aucun', champs voiture = NULL
+  /* Passager : vehicule = 'aucun', champs voiture = NULL */
   vehicule ENUM('voiture','aucun') NOT NULL DEFAULT 'aucun',
   marque VARCHAR(50) NULL,
   modele VARCHAR(50) NULL,
@@ -44,9 +43,7 @@ CREATE TABLE utilisateurs (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
-/* =========================
-   TABLE TRAJETS
-   ========================= */
+/* création de la table trajets */
 
 CREATE TABLE trajets (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -73,9 +70,7 @@ CREATE TABLE trajets (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
-/* =========================
-   TABLE RESERVATIONS
-   ========================= */
+/* création de la table reservations */
 
 CREATE TABLE reservations (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -100,15 +95,14 @@ CREATE TABLE reservations (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
-/* =========================================================
-   DONNÉES DE TEST
+/* DONNÉES DE TEST
    - Hash bcrypt (mot de passe : password123)
    - 20 conducteurs + 20 passagers
-   ========================================================= */
+*/
 
 SET @PWD_HASH = '$2b$10$B3RFAALDOCaXQVl3pNrnve4Y2Xm97Q9TvXVj0islrwlgVynPBpLBu';
 
-/* ---------- 20 CONDUCTEURS (avec voiture) ---------- */
+/* 20 CONDUCTEURS (avec voiture) */
 INSERT INTO utilisateurs (
   role, sexe, nom, prenom, age, email, telephone, mot_de_passe,
   vehicule, marque, modele, annee, energie_vehicule, immatriculation
@@ -134,7 +128,7 @@ INSERT INTO utilisateurs (
 ('conducteur','M','Hill','Mason',27,'mason.hill@example.com','0123418789',@PWD_HASH,'voiture','Audi','A4',2020,'electrique','YZA678'),
 ('conducteur','M','Lourmel','Joshua',22,'joshua.lourmel@example.com','0145456789',@PWD_HASH,'voiture','Mercedes','Classe GLE',2020,'hybride','ABC123');
 
-/* ---------- 20 PASSAGERS (SANS voiture) ---------- */
+/* 20 PASSAGERS (SANS voiture)*/
 INSERT INTO utilisateurs (
   role, sexe, nom, prenom, age, email, telephone, mot_de_passe,
   vehicule, marque, modele, annee, energie_vehicule, immatriculation
@@ -160,10 +154,8 @@ INSERT INTO utilisateurs (
 ('passager','M','Fontaine','Hugo',21,'passager19@ecoride.test','0700000019',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
 ('passager','F','Chevalier','Selma',28,'passager20@ecoride.test','0700000020',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL);
 
-/* =========================================================
-   BONUS: 5 trajets de test créés par 5 conducteurs
-   (ids 1..20 sont les conducteurs insérés plus haut)
-   ========================================================= */
+/* BONUS: 5 trajets de test créés par 5 conducteurs
+   (ids 1..20 sont les conducteurs insérés plus haut) */
 
 INSERT INTO trajets (
   conducteur_id, date_trajet, heure_depart,
@@ -176,31 +168,30 @@ INSERT INTO trajets (
 (4,'2026-01-24','07:45:00','Toulouse','Bordeaux',4,4,22.00,'Voiture confortable.'),
 (5,'2026-01-25','19:00:00','Nantes','Rennes',2,2,8.00,'Trajet rapide.');
 
-/* =========================================================
-   BONUS: 3 reservations de test (passagers ids 21..40)
-   ========================================================= */
+/* BONUS: 3 reservations de test (passagers ids 21..40) */
 
 INSERT INTO reservations (trajet_id, passager_id, places_reservees, statut) VALUES
 (1,21,1,'en_attente'),
 (1,22,1,'acceptee'),
 (2,23,1,'en_attente');
 
-/* =========================
-   REQUÊTES DE TEST
-   ========================= */
+/* REQUÊTES DE TEST */
 
--- Compter conducteurs vs passagers
+/* Compter conducteurs vs passagers */
+
 SELECT role, COUNT(*) AS total
 FROM utilisateurs
 GROUP BY role;
 
--- Lister les trajets
+/* Lister les trajets */
+
 SELECT t.*, u.nom, u.prenom
 FROM trajets t
 JOIN utilisateurs u ON u.id = t.conducteur_id
 ORDER BY t.date_trajet ASC;
 
--- Voir les reservations
+/* Voir les reservations */
+
 SELECT r.*, t.depart, t.destination, p.nom AS passager_nom, p.prenom AS passager_prenom
 FROM reservations r
 JOIN trajets t ON t.id = r.trajet_id
