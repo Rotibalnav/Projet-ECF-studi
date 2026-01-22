@@ -95,6 +95,20 @@ CREATE TABLE reservations (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+/* création de la table messages_contact */
+
+CREATE TABLE IF NOT EXISTS messages_contact (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  statut ENUM('passager','covoitureur') NULL,
+  nom VARCHAR(60) NOT NULL,
+  prenom VARCHAR(60) NOT NULL,
+  vehicule VARCHAR(100) NULL,
+  objet VARCHAR(120) NOT NULL,
+  email VARCHAR(255) NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
 /* DONNÉES DE TEST
    - Hash bcrypt (mot de passe : password123)
    - 20 conducteurs + 20 passagers

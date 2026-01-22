@@ -1,13 +1,12 @@
-import { apiFetch } from "./api.js";
+import { clearToken } from './api.js';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector("#logout-btn, [data-logout]");
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('[data-logout], #logout-btn');
   if (!btn) return;
 
-  btn.addEventListener("click", async () => {
-    try {
-      await apiFetch("/api/auth/logout", { method: "POST" });
-    } catch {}
-    window.location.href = "../index.html";
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearToken();
+    window.location.href = '../index.html';
   });
 });

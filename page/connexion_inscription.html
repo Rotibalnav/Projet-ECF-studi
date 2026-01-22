@@ -1,166 +1,214 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-    <link rel="stylesheet" href="../style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-      <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
-    <title>Connexion/Inscription</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion / Inscription - EcoRide</title>
+  <link rel="icon" type="image/x-icon" href="../Asset/logo voiture_.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-   <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">
-         <img src="../Asset/logo voiture_.png" alt="Logo Eco-Ride" width="40" height="40"
-            class="d-inline-block align-text-top" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-         <ul class="navbar-nav">
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../Asset/logo voiture_.png" alt="Logo EcoRide" width="40" height="40" class="d-inline-block align-text-top" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
             <li class="nav-item">
-               <a class="nav-link" href="../page/page_covoiturage.html">Covoiturage</a>
+              <a class="nav-link" href="../page/page_covoiturage.html">Covoiturage</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="../index.html#voyage_entre_femmes">Elle</a>
+              <a class="nav-link" href="../index.html#voyage_entre_femmes">Elle</a>
             </li>
             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="../index.html#À_propos" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  À propos
-               </a>
-               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li>
-                     <a class="dropdown-item" href="../index.html#Mission">Notre mission</a>
-                  </li>
-                  <li><a class="dropdown-item" href="../index.html#À_propos">À propos</a></li>
-                  <li>
-                     <a class="dropdown-item" href="../page/formulaire.html">Nous contacter</a>
-                  </li>
-               </ul>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">À propos</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="../index.html#Mission">Notre mission</a></li>
+                <li><a class="dropdown-item" href="../index.html#Présentation">Qui sommes-nous ?</a></li>
+                <li><a class="dropdown-item" href="../page/formulaire.html">Nous contacter</a></li>
+              </ul>
             </li>
-            
-            <!--mettre items connexion a droite de la navbar-->
-            <div class="d-flex justify-content-center">
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="./connexion_inscription.html" id="navbarDropdownMenuLink" role="button"
-                     data-bs-toggle="dropdown" aria-expanded="false">
-                     Connexion
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                     <li>
-                        <a class="dropdown-item" href="#Connexion">Connexion/Inscription</a>
-                     </li>
-                     <li>
-                        <a class="dropdown-item" href="../index.html">Deconnexion</a>
-                     </li>
-                  </ul>
-               </li>
-            </div>
-         </ul>
-      </div>
-   </div>
-</nav>
-<body>
-    <header>
-        <h1>Bienvenue chez Eco-Ride</h1>
-    </header>
-    <main>
-        <section id="connexion">
-               <p>
-  <a class="btn btn-dark" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Connexion</a>
-         </p>
-     <div class="row">
-        <div class="col">
-           <div class="collapse multi-collapse" id="multiCollapseExample2">
-            <h3></h3>
-            <div class="connexion">
-               <div id="connexionForm">
-                  <div class="mb-3">
-                     <label for="email" class="form-label">Email</label>
-                     <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
-                  </div>
-                  <div class="mb-3">
-                     <label for="password" class="form-label">Mot de passe</label>
-                     <input type="password" class="form-control" placeholder="Mot de passe" id="password" name="password" required>
-                  </div>
-                  <button type="submit" class="btn btn-dark">Se connecter</button>
-               </div>
-            </div>
-           </div>
+
+            <li class="nav-item dropdown ms-lg-auto">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarAuth" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span data-auth-label>Connexion</span> <span data-user-badge></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarAuth">
+                <li>
+                  <a class="dropdown-item" data-login-link href="../page/connexion_inscription.html">Connexion / Inscription</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" data-logout-link style="display:none" href="#" data-logout>Déconnexion</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
-   </div>
-        </section>
-        <h3>ou</h3>
-        <section id="inscription">
-         <p>
-  <a class="btn btn-dark" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">S'inscrire</a>
-         </p>
-         <div class="row">
-  <div class="col">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-            <h2></h2>
-            <div class="inscription">
-               <form id="contactForm">
-                  <div class="mb-3">
-                     <label for="gender" class="form-label">Genre</label>
-                <select id="gender" class="form-select" placeholder="Genre" name="gender">
-                    <option value="female">Femme</option>
-                    <option value="male">Homme</option>
-                    <option value="other">Autre</option>
-                </select>
-                  </div>
-                  <div class="mb-3">
-                     <label for="email" class="form-label">Email</label>
-                     <input type="email" class="form-control" placeholder="Email" id="email" required>
-                  </div>
-                <div class="mb-3">
-                  <label for="firstname" class="form-label">Prénom</label>
-                <input type="text" class="form-control" placeholder="prénom" id="firstname" required>
-                </div>
-                <div class="mb-3">
-                <label for="name" class="form-label">Nom</label>
-                <input type="text" class="form-control" placeholder="Nom" id="name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="dateofyear" class="form-label">Date de naissance</label>
-                <input type="date" class="form-control" placeholder="Date de naissance" id="dateofyear"  required>
-                </div>
-                <div class="mb-3">
-                <label for="username" class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control" placeholder="Nom d'utilisateur" id="username" required>
-                </div>
-                <div class="mb-3">
-                <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" placeholder="Mot de passe" id="password" required>
-                </div>
-                <div class="mb-3">
-                <label for="confirm-password" class="form-label">Confirmer le mot de passe</label>
-                <input type="password" class="form-control" placeholder="Confirmer le mot de passe" id="confirmpassword" required>
-                </div>
-                <div id="formFeedback" class="mb-3">
-                <button type="submit" class="btn btn-dark">S'inscrire</button>
-                </div>
-               </form>
-            </div>
       </div>
-   </div>
-</div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Ecoride. Tous droits réservés.</p>
-    </footer>
-    <script src="/page/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-   <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
-   <script src="/public/login.js"></script>
-   <script src="/public/api.js"></script>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <div class="container py-5">
+      <div class="section-title">
+        <h2>Mon compte</h2>
+      </div>
+
+      <div class="auth-grid">
+        <!-- Connexion -->
+        <div class="glass-card auth-card">
+          <h3 class="mb-3">Connexion</h3>
+          <form id="loginForm" class="auth-form">
+            <div class="mb-3">
+              <label class="form-label" for="loginEmail">Email</label>
+              <input type="email" class="form-control" id="loginEmail" name="email" placeholder="exemple@mail.com" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="loginPassword">Mot de passe</label>
+              <input type="password" class="form-control" id="loginPassword" name="password" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Se connecter</button>
+            <div id="loginFeedback"></div>
+          </form>
+        </div>
+
+        <!-- Inscription -->
+        <div class="glass-card auth-card">
+          <h3 class="mb-3">Inscription</h3>
+          <form id="registerForm" class="auth-form">
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label" for="role">Rôle</label>
+                <select class="form-select" id="role" name="role" required>
+                  <option value="passager" selected>Passager</option>
+                  <option value="conducteur">Conducteur</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="sexe">Sexe</label>
+                <select class="form-select" id="sexe" name="sexe" required>
+                  <option value="M" selected>Homme</option>
+                  <option value="F">Femme</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row g-2 mt-1">
+              <div class="col-md-6">
+                <label class="form-label" for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required />
+              </div>
+            </div>
+
+            <div class="row g-2 mt-1">
+              <div class="col-md-4">
+                <label class="form-label" for="age">Âge</label>
+                <input type="number" class="form-control" id="age" name="age" min="16" max="120" required />
+              </div>
+              <div class="col-md-8">
+                <label class="form-label" for="telephone">Téléphone</label>
+                <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="06 00 00 00 00" required />
+              </div>
+            </div>
+
+            <div class="mt-2">
+              <label class="form-label" for="registerEmail">Email</label>
+              <input type="email" class="form-control" id="registerEmail" name="email" required />
+            </div>
+
+            <div class="row g-2 mt-1">
+              <div class="col-md-6">
+                <label class="form-label" for="registerPassword">Mot de passe</label>
+                <input type="password" class="form-control" id="registerPassword" name="password" minlength="6" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="confirmPassword">Confirmer</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirm_password" minlength="6" required />
+              </div>
+            </div>
+
+            <!-- Champs conducteur -->
+            <div id="driverFields" class="mt-3" style="display:none">
+              <div class="driver-separator">Infos véhicule (conducteur)</div>
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <label class="form-label" for="marque">Marque</label>
+                  <input type="text" class="form-control" id="marque" name="marque" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="modele">Modèle</label>
+                  <input type="text" class="form-control" id="modele" name="modele" />
+                </div>
+              </div>
+              <div class="row g-2 mt-1">
+                <div class="col-md-4">
+                  <label class="form-label" for="annee">Année</label>
+                  <input type="number" class="form-control" id="annee" name="annee" min="1990" max="2035" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="energie_vehicule">Énergie</label>
+                  <select class="form-select" id="energie_vehicule" name="energie_vehicule">
+                    <option value="thermique" selected>Thermique</option>
+                    <option value="hybride">Hybride</option>
+                    <option value="electrique">Électrique</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="immatriculation">Immatriculation</label>
+                  <input type="text" class="form-control" id="immatriculation" name="immatriculation" placeholder="AB-123-CD" />
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100 mt-3">Créer mon compte</button>
+            <div id="registerFeedback"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <small class="text-muted">Astuce : comptes de test = mot de passe <strong>password123</strong> (voir database.sql)</small>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 EcoRide. Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Scripts modules -->
+  <script type="module" src="../public/nav.js"></script>
+  <script type="module" src="../public/logout.js"></script>
+  <script type="module" src="../public/login.js"></script>
+  <script type="module" src="../public/register.js"></script>
 </body>
 </html>

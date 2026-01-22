@@ -1,31 +1,42 @@
-import { apiFetch } from "./api.js";
+import { apiFetch, setToken } from './api.js';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+function showFeedback(el, msg, ok = false) {
+  if (!el) return;
+  el.textContent = msg;
+  el.className = ok ? 'alert alert-success mt-3' : 'alert alert-danger mt-3';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('loginForm');
+  const feedback = document.getElementById('loginFeedback');
   if (!form) return;
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email =
-      form.querySelector('input[name="email"], #email')?.value.trim();
-    const password =
-      form.querySelector('input[name="password"], #password')?.value;
+    const email = form.querySelector('[name="email"]').value.trim();
+    const password = form.querySelector('[name="password"]').value;
 
     if (!email || !password) {
-      alert("Veuillez remplir tous les champs");
+      showFeedback(feedback, 'Veuillez remplir tous les champs');
       return;
     }
 
     try {
-      await apiFetch("/api/auth/login", {
-        method: "POST",
+      const data = await apiFetch('/api/auth/login', {
+        method: 'POST',
         body: JSON.stringify({ email, password })
       });
 
-      window.location.href = "../connexion_inscription.html";
+      setToken(data.token);
+      showFeedback(feedback, 'Connexion réussie ✅', true);
+
+      // Redirect to carpool search
+      setTimeout(() => {
+        window.location.href = '../index.html';
+      }, 600);
     } catch (err) {
-      alert(err.message);
+      showFeedback(feedback, err.message);
     }
   });
 });

@@ -1,9 +1,25 @@
-// public/js/api.js
+// public/api.js
+// Helper fetch + JWT
+
+export function getToken() {
+  return localStorage.getItem('ecoride_token');
+}
+
+export function setToken(token) {
+  localStorage.setItem('ecoride_token', token);
+}
+
+export function clearToken() {
+  localStorage.removeItem('ecoride_token');
+}
+
 export async function apiFetch(url, options = {}) {
+  const token = getToken();
+
   const res = await fetch(url, {
-    credentials: "include", // 🔐 session
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...(options.headers || {})
     },
     ...options
@@ -12,10 +28,17 @@ export async function apiFetch(url, options = {}) {
   let data = {};
   try {
     data = await res.json();
-  } catch {}
+  } catch {
+    // ignore
+  }
+
+  if (res.status === 401) {
+    // token expired / invalid
+    clearToken();
+  }
 
   if (!res.ok) {
-    throw new Error(data.error || "Erreur serveur");
+    throw new Error(data.error || 'Erreur serveur');
   }
 
   return data;

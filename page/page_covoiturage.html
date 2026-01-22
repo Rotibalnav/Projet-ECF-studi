@@ -36,7 +36,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         À propos
                      </a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <ul class="dropdown-menu" aria-labelledby="navbarAuth">
                         <li>
                            <a class="dropdown-item" href="../index.html#Mission">Notre mission</a>
                         </li>
@@ -48,16 +48,13 @@
                   </li>
                   <div class="d-flex justify-content-center">
                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                           Connexion
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarAuth" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span data-auth-label>Connexion</span> <span data-user-badge></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarAuth">
                            <li>
-                              <a class="dropdown-item" href="./connexion_inscription.html">Connexion/Inscription</a>
+                              <a class="dropdown-item" data-login-link href="./connexion_inscription.html">Connexion/Inscription</a>
                            </li>
                            <li>
-                              <a class="dropdown-item" href="../index.html">Deconnexion</a>
+                              <a class="dropdown-item" data-logout-link style="display:none" href="#" data-logout>Déconnexion</a>
                            </li>
                         </ul>
                      </li>
@@ -226,6 +223,9 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
    <script src="https://kit.fontawesome.com/81e044a312.js" crossorigin="anonymous"></script>
+  <script type="module" src="../public/nav.js"></script>
+  <script type="module" src="../public/logout.js"></script>
+  <script type="module" src="../public/trips.js"></script>
 </body>
 
 </html>
