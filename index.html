@@ -69,6 +69,8 @@
             <h1>Eco-Ride</h1>
          </div>
       </div>
+      <!-- Layout: search box + results side-by-side (desktop) -->
+      <div class="carpool-layout home-carpool-layout">
            <div id="searchcarpool">
          <legend>Rechercher un trajet</legend>
          <div class="mb-3">
@@ -215,6 +217,10 @@
          </div>
          <div id="formFeedback" class="mb-3"></div>
          <button type="submit" class="btn btn-success">C'est parti</button>
+      </div>
+
+      <!-- Results render here (JS) -->
+      <div id="searchResults" class="search-results"></div>
       </div>
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-indicators">

@@ -11,7 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="carpool-page">
    <header>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
          <div class="container-fluid">
@@ -69,6 +69,9 @@
       <div class="section-title">
          <h2>Covoiturage</h2>
       </div>
+
+      <!-- Layout: search box + results side-by-side (desktop) -->
+      <div class="carpool-layout">
       <div id="searchcarpool">
          <legend>Rechercher un trajet</legend>
          <div class="mb-3">
@@ -215,6 +218,10 @@
          </div>
          <div id="formFeedback" class="mb-3"></div>
          <button type="submit" class="btn btn-success">C'est parti</button>
+      </div>
+
+      <!-- Results render here (JS) -->
+      <div id="searchResults" class="search-results"></div>
       </div>
    </main>
        <footer>

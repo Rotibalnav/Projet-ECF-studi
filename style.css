@@ -933,3 +933,83 @@ main {
   #searchcarpool { width: 980px; }
   .trips-grid { width: 1200px; }
 }
+
+/* =====================================================
+   SEARCH + RESULTS SIDE-BY-SIDE (clean layout)
+   - Keep the same glass design
+   - Results appear next to the search card on desktop
+   ===================================================== */
+
+.carpool-layout {
+  width: min(1280px, 94vw);
+  margin: 28px auto 70px auto;
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Neutralize the homepage overlay positioning when used in a layout */
+.carpool-layout #searchcarpool {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin-top: 0;
+  flex: 1 1 720px;
+  width: min(760px, 100%);
+  max-width: 900px;
+}
+
+.carpool-layout .search-results {
+  flex: 0 1 420px;
+  width: min(420px, 100%);
+}
+
+.carpool-layout #searchResults {
+  margin-top: 0;
+}
+
+/* Results as a clean vertical list next to the form */
+.carpool-layout #searchResults .trips-grid {
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0;
+}
+
+.carpool-layout #searchResults .trip-card {
+  padding: 18px;
+}
+
+/* Homepage: keep the original "floating" feel (overlay on carousel) */
+.home-carpool-layout {
+  position: relative;
+  z-index: 100;
+  top: 500px;
+  left: 180px;
+  margin-top: -350px;
+  justify-content: flex-start;
+}
+
+.home-carpool-layout #searchcarpool {
+  flex: 0 0 400px;
+  width: 400px;
+}
+
+/* Small phones: stack + center */
+@media (max-width: 480px) {
+  .carpool-layout { margin: 18px auto 40px auto; gap: 18px; }
+  .home-carpool-layout { top: 0; left: 0; margin-top: 16px; justify-content: center; }
+  .home-carpool-layout #searchcarpool { width: 94vw; flex: 1 1 auto; }
+}
+
+/* Phones / tablets: stack */
+@media (max-width: 768px) {
+  .carpool-layout { gap: 18px; }
+  .carpool-layout .search-results { width: 92vw; flex: 1 1 92vw; }
+}
+
+/* Large desktops: comfortable spacing */
+@media (min-width: 1281px) {
+  .carpool-layout { gap: 34px; }
+}
