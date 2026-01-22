@@ -1,5 +1,147 @@
 import { apiFetch, getToken } from './api.js';
 
+// Leaflet is loaded globally via CDN in the HTML pages (window.L)
+let routeMap = null;
+let routeLayer = null;
+let markerA = null;
+let markerB = null;
+
+function formatDistance(meters) {
+  const km = meters / 1000;
+  return km < 10 ? `${km.toFixed(1)} km` : `${Math.round(km)} km`;
+}
+
+function formatDuration(seconds) {
+  const mins = Math.round(seconds / 60);
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h <= 0) return `${m} min`;
+  return `${h} h ${m.toString().padStart(2, '0')} min`;
+}
+
+async function geocodePlace(q) {
+  // Nominatim (OpenStreetMap) geocoding
+  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
+  const res = await fetch(url, {
+    headers: { 'Accept': 'application/json' }
+  });
+  if (!res.ok) throw new Error('Impossible de géocoder les villes (réseau/limite).');
+  const data = await res.json();
+  if (!data?.length) throw new Error(`Ville introuvable : ${q}`);
+  return {
+    lat: Number(data[0].lat),
+    lon: Number(data[0].lon),
+    label: data[0].display_name
+  };
+}
+
+async function fetchRoute(a, b) {
+  // OSRM public demo server
+  const url = `https://router.project-osrm.org/route/v1/driving/${a.lon},${a.lat};${b.lon},${b.lat}?overview=full&geometries=geojson`;
+  const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+  if (!res.ok) throw new Error('Impossible de calculer l’itinéraire (OSRM).');
+  const data = await res.json();
+  const route = data?.routes?.[0];
+  if (!route) throw new Error('Aucun itinéraire trouvé.');
+  return {
+    distance: route.distance,
+    duration: route.duration,
+    geojson: route.geometry
+  };
+}
+
+function ensureMapSection(afterEl) {
+  let section = document.getElementById('mapSection');
+  if (section) return section;
+
+  section = document.createElement('div');
+  section.id = 'mapSection';
+  section.className = 'glass-card map-card mt-4';
+  section.style.display = 'none';
+
+  section.innerHTML = `
+    <div class="map-head">
+      <h3 class="map-title">Trajet sur la carte</h3>
+      <div class="map-stats" id="mapStats">—</div>
+    </div>
+    <div id="routeMap" class="route-map"></div>
+    <div class="map-hint">*Distance et temps estimés (itinéraire routier).</div>
+  `;
+
+  // Prefer keeping the map under the results column if possible
+  const col = afterEl.closest?.('.results-column');
+  if (col) col.appendChild(section);
+  else afterEl.insertAdjacentElement('afterend', section);
+  return section;
+}
+
+function initLeafletMap() {
+  const L = window.L;
+  if (!L) throw new Error('Leaflet non chargé. Vérifie ta connexion internet.');
+
+  if (routeMap) return routeMap;
+  routeMap = L.map('routeMap', {
+    zoomControl: true,
+    scrollWheelZoom: false
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(routeMap);
+
+  // Default view
+  routeMap.setView([46.6, 2.5], 6);
+  return routeMap;
+}
+
+async function renderRouteOnMap(depart, destination, resultsEl) {
+  const section = ensureMapSection(resultsEl);
+  const statsEl = section.querySelector('#mapStats');
+
+  // Only display when we have results on screen
+  section.style.display = 'block';
+  statsEl.textContent = 'Calcul de l’itinéraire...';
+
+  try {
+    const [a, b] = await Promise.all([geocodePlace(depart), geocodePlace(destination)]);
+    const route = await fetchRoute(a, b);
+
+    const map = initLeafletMap();
+    const L = window.L;
+
+    // Cleanup previous layers
+    if (routeLayer) {
+      routeLayer.remove();
+      routeLayer = null;
+    }
+    if (markerA) markerA.remove();
+    if (markerB) markerB.remove();
+
+    markerA = L.marker([a.lat, a.lon]).addTo(map);
+    markerB = L.marker([b.lat, b.lon]).addTo(map);
+
+    routeLayer = L.geoJSON(route.geojson, {
+      style: {
+        weight: 5,
+        opacity: 0.9
+      }
+    }).addTo(map);
+
+    const bounds = routeLayer.getBounds();
+    map.fitBounds(bounds, { padding: [18, 18] });
+
+    // If the map was hidden, Leaflet needs a refresh for correct rendering
+    setTimeout(() => {
+      try { map.invalidateSize(); } catch {}
+    }, 180);
+
+    statsEl.textContent = `${formatDistance(route.distance)} • ${formatDuration(route.duration)}`;
+  } catch (err) {
+    statsEl.textContent = `Carte indisponible : ${err.message}`;
+  }
+}
+
 function el(tag, attrs = {}, children = []) {
   const node = document.createElement(tag);
   Object.entries(attrs).forEach(([k, v]) => {
@@ -139,6 +281,14 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const { trips } = await apiFetch(`/api/trips/search?date=${encodeURIComponent(date)}&depart=${encodeURIComponent(depart)}&destination=${encodeURIComponent(destination)}&places=${encodeURIComponent(places)}&elle=${elle}`);
       renderTrips(results, trips);
+
+      // Map + route stats under results
+      if (trips?.length) {
+        renderRouteOnMap(depart, destination, results);
+      } else {
+        const section = document.getElementById('mapSection');
+        if (section) section.style.display = 'none';
+      }
     } catch (e) {
       if (feedback) {
         feedback.textContent = e.message;

@@ -9,6 +9,19 @@
    <link rel="stylesheet" href="../style.css">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+   <!-- Leaflet (Map) -->
+   <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+   />
+   <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+   ></script>
 </head>
 
 <body class="carpool-page">
@@ -220,8 +233,20 @@
          <button type="submit" class="btn btn-success">C'est parti</button>
       </div>
 
-      <!-- Results render here (JS) -->
-      <div id="searchResults" class="search-results"></div>
+      <!-- Results + Map column (JS) -->
+      <div class="results-column">
+         <div id="searchResults" class="search-results"></div>
+
+         <!-- Map appears after results -->
+         <div id="mapSection" class="glass-card map-card" style="display:none">
+            <div class="map-head">
+               <h3 class="map-title">Trajet sur la carte</h3>
+               <div class="map-stats" id="mapStats">—</div>
+            </div>
+            <div id="routeMap" class="route-map"></div>
+            <div class="map-hint">*Distance et temps estimés (itinéraire routier).</div>
+         </div>
+      </div>
       </div>
    </main>
        <footer>

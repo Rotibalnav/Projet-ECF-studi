@@ -172,7 +172,7 @@ input, #email, #firstname, #name, #dateofyear, #username, #password, #confirmpas
     border: white;
 }
 .carousel {
-    bottom: 90px;
+    bottom: 0px;
 }
 .form-check-label {
     color: white;
@@ -887,6 +887,55 @@ main {
   flex: 1;
 }
 
+/* =========================
+   Route Map (under results)
+   ========================= */
+
+.map-card {
+  width: min(1050px, 92vw);
+  margin: 18px auto 60px auto;
+  padding: 18px;
+}
+
+.map-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.map-title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgb(214, 240, 230);
+}
+
+.map-stats {
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 146, 138, 0.75);
+  background: rgba(3, 75, 90, 0.20);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.route-map {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 146, 138, 0.75);
+  box-shadow: 0 0 26px 18px rgba(26, 146, 138, 0.14) inset;
+}
+
+.map-hint {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
 /* =====================================================
    RESPONSIVE (smartphone / tablette / laptop / grand écran)
    ===================================================== */
@@ -942,7 +991,7 @@ main {
 
 .carpool-layout {
   width: min(1280px, 94vw);
-  margin: 28px auto 70px auto;
+  margin: 28px auto -315px auto;
   display: flex;
   gap: 26px;
   align-items: flex-start;
@@ -961,9 +1010,22 @@ main {
   max-width: 900px;
 }
 
-.carpool-layout .search-results {
+/* Right column (results + map) */
+.carpool-layout .results-column {
   flex: 0 1 420px;
   width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.carpool-layout .search-results {
+  width: 100%;
+}
+
+.carpool-layout .map-card {
+  width: 100%;
+  margin: 0;
 }
 
 .carpool-layout #searchResults {
@@ -1006,10 +1068,154 @@ main {
 /* Phones / tablets: stack */
 @media (max-width: 768px) {
   .carpool-layout { gap: 18px; }
-  .carpool-layout .search-results { width: 92vw; flex: 1 1 92vw; }
+  .carpool-layout .results-column { width: 92vw; flex: 1 1 92vw; }
 }
 
 /* Large desktops: comfortable spacing */
 @media (min-width: 1281px) {
   .carpool-layout { gap: 34px; }
+}
+
+/* =========================================================
+   ✅ FIX: Layout recherche + résultats + map
+   => doit rester DANS le carousel (no overflow)
+   ========================================================= */
+
+/* Le carousel ne doit jamais laisser dépasser les blocs */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  overflow: hidden !important;
+}
+
+/* La slide doit être une zone "conteneur" */
+.carousel-item {
+  position: relative !important;
+}
+
+/* Image du carousel : full cover (propre) */
+.carousel-item img {
+  width: 100%;
+  height: clamp(520px, 82vh, 900px); /* hauteur stable */
+  object-fit: cover;
+}
+
+/* ✅ WRAPPER principal (recherche + résultats + map) */
+.home-carpool-layout {
+  position: absolute !important;
+  inset: 0 !important; /* prend toute la slide */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: clamp(16px, 3vw, 40px) !important;
+}
+
+/* ✅ Contenu interne : limité en taille */
+.home-carpool-layout .carpool-layout {
+  width: min(1200px, 94vw) !important;
+  max-height: calc(100% - 80px) !important; /* empêche dépassement */
+  display: flex !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+/* Colonne gauche = recherche */
+.home-carpool-layout #searchcarpool {
+  flex: 0 0 420px !important;
+  width: 420px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Colonne droite = résultats + map (scroll si trop grand) */
+.home-carpool-layout .search-results {
+  flex: 1 !important;
+  min-width: 320px !important;
+  max-height: 100% !important;
+  overflow: auto !important;  /* ✅ si trop long => scroll interne */
+  padding-right: 6px;
+}
+
+/* Liste résultats : espacement propre */
+.home-carpool-layout .search-results .trip-card {
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}
+
+/* Bloc MAP doit rester compact et ne jamais exploser */
+.route-map-card {
+  width: 100% !important;
+  margin-top: 14px !important;
+  max-height: 360px !important;
+  overflow: hidden !important;
+}
+
+/* Taille de la map */
+#routeMap {
+  height: 240px !important;
+  width: 100% !important;
+  border-radius: 14px;
+}
+
+/* Barre stats km/durée : ne pas dépasser */
+.route-stats {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+/* =========================================================
+   ✅ RESPONSIVE (tablette)
+   => on réduit largeur et on évite débordement
+   ========================================================= */
+@media (max-width: 992px) {
+  .home-carpool-layout .carpool-layout {
+    width: min(900px, 94vw) !important;
+    gap: 18px !important;
+  }
+
+  .home-carpool-layout #searchcarpool {
+    flex: 0 0 360px !important;
+    width: 360px !important;
+  }
+
+  #routeMap {
+    height: 220px !important;
+  }
+}
+
+/* =========================================================
+   ✅ RESPONSIVE (mobile)
+   => tout s'empile proprement DANS la slide
+   ========================================================= */
+@media (max-width: 768px) {
+  .home-carpool-layout {
+    position: absolute !important;
+    align-items: flex-start !important;
+    padding: 14px !important;
+  }
+
+  .home-carpool-layout .carpool-layout {
+    flex-direction: column !important;
+    width: 95vw !important;
+    max-height: calc(100% - 20px) !important;
+    overflow: auto !important; /* ✅ scroll global sur mobile */
+  }
+
+  .home-carpool-layout #searchcarpool {
+    width: 100% !important;
+    flex: unset !important;
+  }
+
+  .home-carpool-layout .search-results {
+    width: 100% !important;
+    max-height: unset !important;
+    overflow: visible !important;
+  }
+
+  #routeMap {
+    height: 220px !important;
+  }
 }
