@@ -180,7 +180,22 @@ INSERT INTO trajets (
 (2,'2026-01-22','14:00:00','Lyon','Grenoble',2,2,10.00,'Départ à l\'heure.'),
 (3,'2026-01-23','09:15:00','Marseille','Nice',3,3,18.00,'Pause café possible.'),
 (4,'2026-01-24','07:45:00','Toulouse','Bordeaux',4,4,22.00,'Voiture confortable.'),
-(5,'2026-01-25','19:00:00','Nantes','Rennes',2,2,8.00,'Trajet rapide.');
+(5,'2026-01-25','19:00:00','Nantes','Rennes',2,2,8.00,'Trajet rapide.'),
+(6,'2026-01-26','12:30:00','Strasbourg','Metz',3,3,12.00,'Musique au choix.'),
+(7,'2026-01-27','15:00:00','Montpellier','Perpignan',2,2,14.00,'Arrêt possible en route.'),
+(8,'2026-01-28','10:00:00','Dijon','Besançon',3,3,11.00,'Trajet sans stress.'),
+(9,'2026-01-29','13:30:00','Angers','Le Mans',4,4,9.00,'Voiture spacieuse.'),
+(10,'2026-01-30','16:45:00','Clermont-Ferrand','Limoges',2,2,20.00,'Conduite prudente.'),
+(11,'2026-01-31','11:15:00','Amiens','Rouen',3,3,13.00,'Trajet agréable.'),
+(12,'2026-02-01','09:00:00','Caen','Le Havre',2,2,7.00,'Ponctuel et fiable.'),
+(13,'2026-02-02','14:30:00','Nancy','Reims',4,4,16.00,'Bonne ambiance garantie.'),
+(14,'2026-02-03','08:00:00','Tours','Orléans',3,3,10.00,'Voiture propre.'),
+(15,'2026-02-04','17:15:00','Avignon','Nîmes',2,2,12.00,'Chauffeur sympathique.'),
+(16,'2026-02-05','10:30:00','Poitiers','La Rochelle',3,3,15.00,'Trajet détendu.'),
+(17,'2026-02-06','13:00:00','Valence','Gap',4,4,18.00,'Arrêt pour repas possible.'),
+(18,'2026-02-07','07:30:00','Annecy','Chambéry',2,2,14.00,'Conduite sécurisée.'),
+(19,'2026-02-08','15:45:00','Brest','Quimper',3,3,11.00,'Musique douce préférée.'),
+(20,'2026-02-09','12:15:00','Ajaccio','Bastia',2,2,25.00,'Trajet en ferry inclus.');
 
 /* BONUS: 3 reservations de test (passagers ids 21..40) */
 
