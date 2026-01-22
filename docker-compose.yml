@@ -1,0 +1,62 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ecoride-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ecoride_root_password
+      MYSQL_ROOT_HOST: '%'
+      TZ: Europe/Paris
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Auto-import your existing SQL on first run
+      - ./database.sql:/docker-entrypoint-initdb.d/01_database.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: ecoride-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 64M
+      TZ: Europe/Paris
+    ports:
+      - "8080:80"
+
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecoride-node
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      # Override DB host/password for Docker network
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: ecoride_root_password
+      DB_NAME: ecoride
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+volumes:
+  mysql_data:
