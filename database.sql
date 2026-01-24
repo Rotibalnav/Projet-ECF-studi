@@ -166,7 +166,8 @@ INSERT INTO utilisateurs (
 ('passager','M','Vincent','Samy',24,'passager17@ecoride.test','0700000017',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
 ('passager','F','Blanc','Aya',33,'passager18@ecoride.test','0700000018',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
 ('passager','M','Fontaine','Hugo',21,'passager19@ecoride.test','0700000019',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
-('passager','F','Chevalier','Selma',28,'passager20@ecoride.test','0700000020',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL);
+('passager','F','Chevalier','Selma',28,'passager20@ecoride.test','0700000020',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL),
+('passager','F','Goarin','Typhaine',40,'goarintyphaine@ecoride.com','0700000021',@PWD_HASH,'aucun',NULL,NULL,NULL,NULL,NULL);
 
 /* BONUS: 5 trajets de test créés par 5 conducteurs
    (ids 1..20 sont les conducteurs insérés plus haut) */
@@ -195,7 +196,8 @@ INSERT INTO trajets (
 (17,'2026-02-06','13:00:00','Valence','Gap',4,4,18.00,'Arrêt pour repas possible.'),
 (18,'2026-02-07','07:30:00','Annecy','Chambéry',2,2,14.00,'Conduite sécurisée.'),
 (19,'2026-02-08','15:45:00','Brest','Quimper',3,3,11.00,'Musique douce préférée.'),
-(20,'2026-02-09','12:15:00','Ajaccio','Bastia',2,2,25.00,'Trajet en ferry inclus.');
+(20,'2026-02-09','12:15:00','Ajaccio','Bastia',2,2,25.00,'Trajet en ferry inclus.'),
+(21,'2026-01-24','18:00:00','Paris','Saint-tropez',3,3,20.00,'Trajet agréable.');
 
 /* BONUS: 3 reservations de test (passagers ids 21..40) */
 

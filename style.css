@@ -1003,9 +1003,9 @@ main {
 .carpool-layout #searchcarpool {
   position: relative;
   top: auto;
-  left: auto;
+  left: -200px;
   margin-top: 0;
-  flex: 1 1 720px;
+  flex: 0 0 420px;
   width: min(760px, 100%);
   max-width: 900px;
 }
